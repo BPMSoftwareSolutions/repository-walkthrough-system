@@ -1,0 +1,281 @@
+{
+  "contractType": "repository-walkthrough-system-body.v1",
+  "systemId": "repository-walkthrough-system",
+  "status": "scaffold",
+  "capabilities": [
+    {
+      "capabilityId": "repository-source-resolver",
+      "package": "capabilities/repository-source-resolver",
+      "owns": [
+        "repository reference",
+        "repository provider",
+        "repository identity",
+        "revision",
+        "branch",
+        "tag",
+        "commit",
+        "presentation entrypoint",
+        "authorization",
+        "source disposition"
+      ],
+      "mustNotOwn": [
+        "scene",
+        "narration",
+        "scroll",
+        "browser",
+        "recording",
+        "frame",
+        "video"
+      ],
+      "publicContract": "capabilities/repository-source-resolver/contracts/resolved-repository-source.schema.v1.json",
+      "dependencies": []
+    },
+    {
+      "capabilityId": "repository-presentation-inspector",
+      "package": "capabilities/repository-presentation-inspector",
+      "owns": [
+        "presentation asset",
+        "document",
+        "section",
+        "heading",
+        "diagram",
+        "source example",
+        "feature example",
+        "contract example",
+        "proof example",
+        "presentability",
+        "repository presentation inventory"
+      ],
+      "mustNotOwn": [
+        "story beat",
+        "scroll path",
+        "recording profile",
+        "video codec"
+      ],
+      "publicContract": "capabilities/repository-presentation-inspector/contracts/repository-presentation-inventory.schema.v1.json",
+      "dependencies": [
+        "repository-source-resolver"
+      ]
+    },
+    {
+      "capabilityId": "walkthrough-story-resolver",
+      "package": "capabilities/walkthrough-story-resolver",
+      "owns": [
+        "audience",
+        "learning objective",
+        "story",
+        "story beat",
+        "concept",
+        "explanation",
+        "introduction",
+        "demonstration",
+        "evidence",
+        "conclusion",
+        "narrative order",
+        "presentation emphasis"
+      ],
+      "mustNotOwn": [
+        "CSS selector",
+        "DOM element",
+        "browser viewport",
+        "FFmpeg",
+        "WebM",
+        "Playwright"
+      ],
+      "publicContract": "capabilities/walkthrough-story-resolver/contracts/walkthrough-story.schema.v1.json",
+      "dependencies": [
+        "repository-presentation-inspector"
+      ]
+    },
+    {
+      "capabilityId": "walkthrough-scene-planner",
+      "package": "capabilities/walkthrough-scene-planner",
+      "owns": [
+        "scene",
+        "visual source",
+        "visual subject",
+        "scene purpose",
+        "entrance",
+        "presentation state",
+        "focus target",
+        "exit",
+        "scene sequence",
+        "scene transition"
+      ],
+      "mustNotOwn": [
+        "Playwright",
+        "CSS selector",
+        "physical scrolling",
+        "video codec"
+      ],
+      "publicContract": "capabilities/walkthrough-scene-planner/contracts/walkthrough-scene-plan.schema.v1.json",
+      "dependencies": [
+        "walkthrough-story-resolver",
+        "repository-presentation-inspector"
+      ]
+    },
+    {
+      "capabilityId": "browser-presentation-resolver",
+      "package": "capabilities/browser-presentation-resolver",
+      "owns": [
+        "browser presentation",
+        "navigation",
+        "viewport",
+        "scroll path",
+        "focus action",
+        "presentation action",
+        "page target",
+        "target locator",
+        "settling condition",
+        "browser state"
+      ],
+      "mustNotOwn": [
+        "educational emphasis",
+        "recording codec",
+        "scene proof disposition"
+      ],
+      "publicContract": "capabilities/browser-presentation-resolver/contracts/resolved-browser-walkthrough.schema.v1.json",
+      "dependencies": [
+        "walkthrough-scene-planner"
+      ]
+    },
+    {
+      "capabilityId": "browser-walkthrough-executor",
+      "package": "capabilities/browser-walkthrough-executor",
+      "owns": [
+        "browser session",
+        "browser operation",
+        "page",
+        "element",
+        "navigation result",
+        "scroll result",
+        "focus result",
+        "observed browser failure",
+        "execution disposition"
+      ],
+      "mustNotOwn": [
+        "learning objective",
+        "story beat",
+        "presentation emphasis",
+        "recording proof"
+      ],
+      "publicContract": "capabilities/browser-walkthrough-executor/contracts/browser-execution-testimony.schema.v1.json",
+      "dependencies": [
+        "browser-presentation-resolver"
+      ]
+    },
+    {
+      "capabilityId": "screen-recording-controller",
+      "package": "capabilities/screen-recording-controller",
+      "owns": [
+        "recording session",
+        "capture source",
+        "capture region",
+        "frame",
+        "frame rate",
+        "resolution",
+        "recording stream",
+        "container",
+        "codec",
+        "recording artifact",
+        "recording integrity"
+      ],
+      "mustNotOwn": [
+        "GitHub",
+        "README",
+        "scene meaning",
+        "repository",
+        "architecture explanation"
+      ],
+      "publicContract": "capabilities/screen-recording-controller/contracts/recording-artifact.schema.v1.json",
+      "dependencies": []
+    },
+    {
+      "capabilityId": "walkthrough-scene-observer",
+      "package": "capabilities/walkthrough-scene-observer",
+      "owns": [
+        "expected scene",
+        "observed scene",
+        "visual assertion",
+        "visibility",
+        "position",
+        "stability",
+        "scene start",
+        "scene completion",
+        "scene observation",
+        "scene conformance"
+      ],
+      "mustNotOwn": [
+        "story generation",
+        "browser navigation authority",
+        "capture codec",
+        "walkthrough proof disposition"
+      ],
+      "publicContract": "capabilities/walkthrough-scene-observer/contracts/scene-observation-testimony.schema.v1.json",
+      "dependencies": [
+        "walkthrough-scene-planner",
+        "browser-walkthrough-executor"
+      ]
+    },
+    {
+      "capabilityId": "recording-proof-builder",
+      "package": "capabilities/recording-proof-builder",
+      "owns": [
+        "proof requirement",
+        "recording evidence",
+        "scene evidence",
+        "artifact evidence",
+        "conformance",
+        "finding",
+        "proof disposition",
+        "proven walkthrough",
+        "rejected walkthrough",
+        "incomplete walkthrough"
+      ],
+      "mustNotOwn": [
+        "browser navigation",
+        "capture execution",
+        "story generation",
+        "scene replay"
+      ],
+      "publicContract": "capabilities/recording-proof-builder/contracts/repository-walkthrough-proof.schema.v1.json",
+      "dependencies": [
+        "screen-recording-controller",
+        "walkthrough-scene-observer"
+      ]
+    },
+    {
+      "capabilityId": "repository-walkthrough-harness",
+      "package": "capabilities/repository-walkthrough-harness",
+      "owns": [
+        "walkthrough request",
+        "capability invocation",
+        "capability result",
+        "execution context",
+        "composition",
+        "walkthrough outcome"
+      ],
+      "mustNotOwn": [
+        "README parsing",
+        "story beat construction",
+        "CSS selector",
+        "scroll speed",
+        "Playwright launch",
+        "FFmpeg launch",
+        "video metadata interpretation"
+      ],
+      "publicContract": "capabilities/repository-walkthrough-harness/contracts/proven-repository-walkthrough.schema.v1.json",
+      "dependencies": [
+        "repository-source-resolver",
+        "repository-presentation-inspector",
+        "walkthrough-story-resolver",
+        "walkthrough-scene-planner",
+        "browser-presentation-resolver",
+        "browser-walkthrough-executor",
+        "screen-recording-controller",
+        "walkthrough-scene-observer",
+        "recording-proof-builder"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "walkthrough-scene-observer",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "resolve-scene-observation-requirements",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-visual-target-visibility",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-browser-state",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-scene-settlement",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "classify-scene-observation",
+      "sequence": 5,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-scene-observation-testimony",
+      "sequence": 6,
+      "kind": "projection"
+    }
+  ]
+}

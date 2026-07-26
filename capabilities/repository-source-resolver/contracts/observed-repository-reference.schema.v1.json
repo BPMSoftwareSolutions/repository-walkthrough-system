@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observed-repository-reference.schema.v1.json",
+  "title": "Observed Repository Reference Recognition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "submittedReference", "matchingAuthorityCount", "disposition"],
+  "properties": {
+    "contractType": { "const": "observed-repository-reference.v1" },
+    "submittedReference": { "type": "string" },
+    "matchingAuthorityCount": { "type": "integer", "minimum": 0 },
+    "disposition": { "enum": ["recognized", "unsupported", "ambiguous"] },
+    "recognizedReference": {
+      "oneOf": [
+        { "$ref": "recognized-repository-reference.schema.v1.json" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "x-status": "implemented-first-slice"
+}

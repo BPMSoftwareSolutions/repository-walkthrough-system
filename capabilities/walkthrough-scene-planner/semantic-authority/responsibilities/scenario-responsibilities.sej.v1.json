@@ -1,0 +1,52 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "responsibilities": [
+    {
+      "responsibilityId": "validate-scene-planning-request",
+      "sequence": 1,
+      "kind": "contract-validation"
+    },
+    {
+      "responsibilityId": "resolve-scene-kind",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "select-presentation-asset",
+      "sequence": 3,
+      "kind": "selection"
+    },
+    {
+      "responsibilityId": "project-visual-subject-and-focus",
+      "sequence": 4,
+      "kind": "projection"
+    },
+    {
+      "responsibilityId": "order-walkthrough-scenes",
+      "sequence": 5,
+      "kind": "iteration"
+    },
+    {
+      "responsibilityId": "resolve-scene-transitions",
+      "sequence": 6,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-required-story-coverage",
+      "sequence": 7,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-walkthrough-scene-plan",
+      "sequence": 8,
+      "kind": "projection"
+    },
+    {
+      "responsibilityId": "produce-scene-planning-proof",
+      "sequence": 9,
+      "kind": "proof"
+    }
+  ]
+}

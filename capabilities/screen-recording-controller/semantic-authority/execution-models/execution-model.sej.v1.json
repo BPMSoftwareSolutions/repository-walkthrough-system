@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "screen-recording-controller",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-screen-recording-controller-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-screen-recording-controller"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-screen-recording-controller-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

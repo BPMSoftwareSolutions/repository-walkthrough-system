@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "repository-source-resolver",
+  "title": "Resolve an authorized repository source",
+  "purpose": "Produce one immutable and authorized repository source from a submitted repository reference.",
+  "actor": "authorized-caller",
+  "trigger": "a repository source request is submitted",
+  "desiredOutcome": "the caller receives a canonical repository identity pinned to an immutable revision",
+  "constraints": [
+    "only public github.com HTTPS repository references are supported in the first slice",
+    "a movable branch or tag must not be returned as the final source identity",
+    "provider access must be observed before the source is authorized",
+    "repository content must not be modified",
+    "credentials must never appear in the resolved source or receipt",
+    "the submitted provider-specific reference must be preserved as testimony",
+    "the resolved full commit identity must be recorded",
+    "unsupported or ambiguous references must fail closed",
+    "all capability-specific decisions and DTO mappings are declared in semantic authority",
+    "runtime bodies resolve, execute, project, and return without authored domain decisions"
+  ],
+  "featureIds": [
+    "resolve-an-authorized-repository-source"
+  ],
+  "status": "implemented-first-slice"
+}

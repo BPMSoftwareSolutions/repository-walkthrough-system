@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-authority.schema.v1.json",
+  "title": "Resolved Repository Presentation Inspection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "authorityType",
+    "inspectionId",
+    "inventoryId",
+    "repository",
+    "authorizedRoot",
+    "profile",
+    "inspectionTimestamp",
+    "operations",
+    "failurePolicyId",
+    "proofContractId",
+    "authorityHash"
+  ],
+  "properties": {
+    "authorityType": { "const": "resolved-repository-presentation-inspection.v1" },
+    "inspectionId": { "type": "string", "minLength": 1 },
+    "inventoryId": { "type": "string", "minLength": 1 },
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repositoryId", "provider", "revision", "sourceReceiptHash"],
+      "properties": {
+        "repositoryId": { "type": "string" },
+        "provider": { "const": "local-workspace" },
+        "revision": { "type": "string" },
+        "sourceReceiptHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      }
+    },
+    "authorizedRoot": { "type": "string", "minLength": 1 },
+    "profile": { "type": "object" },
+    "inspectionTimestamp": { "type": "string", "format": "date-time" },
+    "operations": {
+      "type": "array",
+      "minItems": 11,
+      "items": {
+        "type": "object",
+        "required": ["sequence", "operation"],
+        "properties": {
+          "sequence": { "type": "integer", "minimum": 1 },
+          "operation": { "type": "string" }
+        }
+      }
+    },
+    "failurePolicyId": { "const": "repository-presentation-inspection-failure-policy" },
+    "proofContractId": { "const": "repository-presentation-inspection-proof.v1" },
+    "authorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

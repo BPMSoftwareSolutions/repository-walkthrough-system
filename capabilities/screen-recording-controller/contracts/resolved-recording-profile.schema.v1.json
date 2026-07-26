@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-recording-profile.schema.v1.json",
+  "title": "Screen Recording Controller Resolved Recording Profile",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "resolved-recording-profile.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "screen-recording-controller",
+  "x-status": "scaffold"
+}

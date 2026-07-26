@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "readme-presentation-inspection-receipt.schema.v1.json",
+  "title": "README Presentation Inspection Receipt",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "readme-presentation-inspection-receipt.v1" }
+  },
+  "status": "scaffold"
+}

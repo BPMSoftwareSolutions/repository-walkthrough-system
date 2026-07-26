@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "recognized-repository-reference.schema.v1.json",
+  "title": "Recognized Repository Reference",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "recognizerId", "providerId", "host", "referenceDialect", "owner", "repositoryName"],
+  "properties": {
+    "contractType": { "const": "recognized-repository-reference.v1" },
+    "recognizerId": { "const": "recognize-github-https-reference" },
+    "providerId": { "const": "github" },
+    "host": { "const": "github.com" },
+    "referenceDialect": { "const": "github-https" },
+    "owner": { "type": "string", "minLength": 1 },
+    "repositoryName": { "type": "string", "minLength": 1 }
+  },
+  "x-status": "implemented-first-slice"
+}

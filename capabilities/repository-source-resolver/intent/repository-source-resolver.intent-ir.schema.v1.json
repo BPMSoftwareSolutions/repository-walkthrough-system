@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-source-resolver.intent-ir.schema.v1.json",
+  "title": "Repository Source Resolver Intent IR",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "repository-source-resolver.intent-ir.v1" }
+  },
+  "status": "implemented-first-slice"
+}

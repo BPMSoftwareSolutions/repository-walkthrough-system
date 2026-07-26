@@ -1,0 +1,15 @@
+{
+  "semanticType": "observation-catalog.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "observationId": "observe-resolved-walkthrough-story",
+      "sourceContract": "walkthrough-story.v1"
+    },
+    {
+      "observationId": "observe-repository-presentation-inventory",
+      "sourceContract": "repository-presentation-inventory.v1"
+    }
+  ]
+}

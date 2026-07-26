@@ -1,0 +1,32 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "browser-walkthrough-executor",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "dispatch-browser-operation",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "classify-browser-operation-result",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "classify-browser-operation-failure",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "execute-browser-operation-sequence",
+      "sequence": 4,
+      "kind": "execution-model"
+    },
+    {
+      "responsibilityId": "project-browser-execution-testimony",
+      "sequence": 5,
+      "kind": "projection"
+    }
+  ]
+}

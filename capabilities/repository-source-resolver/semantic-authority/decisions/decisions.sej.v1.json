@@ -1,0 +1,12 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "entries": [
+    { "decisionId": "recognize-repository-reference", "authority": "../recognize-repository-reference/recognizes-repository-reference.sej.v1.json" },
+    { "decisionId": "resolve-repository-provider", "authority": "../resolve-repository-provider/resolves-repository-provider.sej.v1.json" },
+    { "decisionId": "resolve-repository-access-disposition", "authority": "../resolve-repository-access/resolves-repository-access-disposition.sej.v1.json" },
+    { "decisionId": "resolve-repository-revision-disposition", "authority": "../resolve-repository-revision/resolves-repository-revision.sej.v1.json" },
+    { "decisionId": "resolve-presentation-entrypoint", "authority": "../resolve-presentation-entrypoint/resolves-presentation-entrypoint.sej.v1.json" }
+  ]
+}

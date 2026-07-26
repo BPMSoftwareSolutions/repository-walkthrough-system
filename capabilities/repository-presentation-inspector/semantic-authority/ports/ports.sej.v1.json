@@ -1,0 +1,21 @@
+{
+  "semanticType": "port-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "portId": "list-repository-artifacts",
+      "direction": "outbound",
+      "requestContract": "authorized-repository-root.v1",
+      "responseContract": "observed-repository-artifact-list.v1",
+      "effectId": "observe-repository-artifact-inventory"
+    },
+    {
+      "portId": "read-repository-artifact",
+      "direction": "outbound",
+      "requestContract": "authorized-repository-artifact.v1",
+      "responseContract": "observed-repository-artifact-content.v1",
+      "effectId": "observe-repository-artifact-content"
+    }
+  ]
+}

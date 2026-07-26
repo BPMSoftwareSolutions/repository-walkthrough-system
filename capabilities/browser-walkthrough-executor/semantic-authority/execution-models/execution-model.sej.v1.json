@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "browser-walkthrough-executor",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-browser-walkthrough-executor-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-browser-walkthrough-executor"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-browser-walkthrough-executor-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

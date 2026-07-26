@@ -1,0 +1,20 @@
+{
+  "semanticType": "execution-model.v1",
+  "responsibilityId": "repository-source-resolution-execution",
+  "status": "implemented-first-slice",
+  "authorityType": "resolved-repository-source-resolution-authority.v1",
+  "operations": [
+    { "sequence": 1, "operationId": "recognize-submitted-repository-reference", "invocation": "recognize-repository-reference" },
+    { "sequence": 2, "operationId": "resolve-repository-provider", "invocation": "resolve-repository-provider" },
+    { "sequence": 3, "operationId": "observe-repository-identity", "portId": "observes-github-repository" },
+    { "sequence": 4, "operationId": "resolve-repository-access", "invocation": "resolve-repository-access-disposition" },
+    { "sequence": 5, "operationId": "observe-requested-revision", "portId": "resolved-by-revision-disposition" },
+    { "sequence": 6, "operationId": "resolve-immutable-revision", "invocation": "resolve-repository-revision" },
+    { "sequence": 7, "operationId": "observe-presentation-entrypoint", "portId": "observes-github-entrypoint" },
+    { "sequence": 8, "operationId": "resolve-presentation-entrypoint", "invocation": "resolve-presentation-entrypoint" },
+    { "sequence": 9, "operationId": "project-resolved-source", "projectionId": "project-resolved-repository-source" },
+    { "sequence": 10, "operationId": "project-resolution-receipt", "projectionId": "project-repository-source-resolution-receipt" }
+  ],
+  "failurePolicyId": "repository-source-resolution-failure-policy.v1",
+  "proofContractId": "repository-source-resolution-proof.v1"
+}

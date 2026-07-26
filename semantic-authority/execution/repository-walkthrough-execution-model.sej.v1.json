@@ -1,0 +1,10 @@
+{
+  "semanticType": "execution-model.v1",
+  "executionModelId": "repository-walkthrough-execution-model",
+  "status": "scaffold",
+  "operations": [
+    "resolve-repository-walkthrough-authority",
+    "execute-resolved-repository-walkthrough",
+    "project-repository-walkthrough-receipt"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-repository-walkthrough.schema.v1.json",
+  "title": "Resolved Repository Walkthrough",
+  "type": "object",
+  "required": ["walkthroughId", "operations", "proofContractId"],
+  "properties": {
+    "walkthroughId": { "type": "string", "minLength": 1 },
+    "operations": { "type": "array", "items": { "type": "object" } },
+    "proofContractId": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false,
+  "x-status": "scaffold"
+}

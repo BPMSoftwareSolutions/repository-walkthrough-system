@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "failurePolicyId": "repository-presentation-inspection-failure-policy",
+  "authorityCatalog": "./failure-policy.sej.v1.json",
+  "status": "implemented-first-slice"
+}

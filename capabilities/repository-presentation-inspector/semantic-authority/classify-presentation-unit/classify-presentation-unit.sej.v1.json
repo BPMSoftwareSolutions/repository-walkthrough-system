@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "decisionId": "classify-presentation-unit",
+  "authorityCatalog": "../decisions/decisions.sej.v1.json",
+  "status": "implemented-first-slice"
+}

@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "orderingId": "order-repository-presentation-assets",
+  "authorityProfile": "../inspection-profiles/repository-overview.sej.v1.json",
+  "status": "implemented-first-slice"
+}

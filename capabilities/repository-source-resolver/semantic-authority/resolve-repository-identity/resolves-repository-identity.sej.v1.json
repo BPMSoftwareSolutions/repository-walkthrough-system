@@ -1,0 +1,20 @@
+{
+  "semanticType": "observation-catalog.v1",
+  "responsibilityId": "resolve-repository-identity",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "observationId": "resolve-github-repository-identity",
+      "portId": "observes-github-repository",
+      "requiredFacts": [
+        "providerRepositoryId",
+        "owner",
+        "repositoryName",
+        "canonicalSlug",
+        "visibility",
+        "defaultBranch"
+      ],
+      "successDisposition": "repository-identity-observed"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "proofContractId": "browser-presentation-resolution-proof.v1",
+  "requiredAssertions": [
+    "request-contract-validated",
+    "presentation-surface-resolved",
+    "viewport-profile-resolved",
+    "every-scene-has-ordered-operations",
+    "every-operation-references-a-semantic-target",
+    "no-executor-specific-locator-projected",
+    "resolved-plan-contract-validated",
+    "request-hash-recorded",
+    "authority-hash-recorded",
+    "plan-hash-recorded"
+  ]
+}

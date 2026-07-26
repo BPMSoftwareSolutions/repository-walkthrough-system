@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "walkthrough-scene-observer",
+  "title": "Walkthrough Scene Observer",
+  "purpose": "Record whether each declared scene visibly occurred.",
+  "actor": "authorized-caller",
+  "trigger": "an expected scene and observable presentation state are submitted",
+  "desiredOutcome": "facts establish whether the expected visual scene visibly conformed",
+  "constraints": [
+    "canonical meaning is limited to visual observation testimony",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions",
+    "effects occur only through declared ports and produce proof receipts"
+  ],
+  "featureIds": [
+    "observe-walkthrough-scene-execution"
+  ],
+  "status": "scaffold"
+}

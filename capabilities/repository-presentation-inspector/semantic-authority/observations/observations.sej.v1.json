@@ -1,0 +1,25 @@
+{
+  "semanticType": "observation-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "observationId": "observe-authorized-repository-artifacts",
+      "portId": "list-repository-artifacts",
+      "facts": [
+        "relativePath",
+        "fileName",
+        "extension",
+        "size",
+        "contentHash",
+        "readable",
+        "symlink"
+      ]
+    },
+    {
+      "observationId": "observe-supported-artifact-content",
+      "portId": "read-repository-artifact",
+      "facts": ["relativePath", "text", "contentHash", "readable"]
+    }
+  ]
+}

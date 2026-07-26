@@ -1,0 +1,7 @@
+{
+  "name": "@repository-walkthrough/recording-proof-builder",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Evaluate evidence and produce truthful recording proof.",
+  "type": "module"
+}

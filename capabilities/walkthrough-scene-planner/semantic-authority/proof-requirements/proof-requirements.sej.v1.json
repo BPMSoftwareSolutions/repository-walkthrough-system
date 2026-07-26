@@ -1,0 +1,21 @@
+{
+  "semanticType": "proof-requirements.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "proofContractId": "repository-walkthrough-scene-planning-proof.v1",
+  "status": "implemented-first-slice",
+  "requiredAssertions": [
+    "request-identity-recorded",
+    "walkthrough-story-hash-recorded",
+    "presentation-inventory-hash-recorded",
+    "scene-planning-authority-hash-recorded",
+    "every-required-story-beat-evaluated",
+    "every-scene-references-an-admitted-presentation-asset",
+    "every-scene-declares-a-semantic-anchor",
+    "every-scene-declares-a-presentation-intent",
+    "scene-sequences-are-contiguous-and-unique",
+    "required-story-coverage-evaluated",
+    "browser-specific-mechanics-absent",
+    "scene-plan-contract-validated",
+    "final-disposition-recorded"
+  ]
+}

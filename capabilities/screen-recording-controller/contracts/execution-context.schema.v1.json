@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "execution-context.schema.v1.json",
+  "title": "Screen Recording Controller Execution Context",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "execution-context.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "screen-recording-controller",
+  "x-status": "scaffold"
+}

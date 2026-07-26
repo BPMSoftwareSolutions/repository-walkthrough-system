@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-presentation-inspection-receipt.schema.v1.json",
+  "title": "Repository Presentation Inspection Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receiptType",
+    "runId",
+    "repositoryId",
+    "repositoryRevision",
+    "inspectionProfileId",
+    "inspectionAuthorityHash",
+    "observedArtifactCount",
+    "presentationAssetCount",
+    "unsupportedArtifactCount",
+    "inventoryHash",
+    "findings",
+    "assertions",
+    "disposition"
+  ],
+  "properties": {
+    "receiptType": { "const": "repository-presentation-inspection-receipt.v1" },
+    "runId": { "type": "string" },
+    "repositoryId": { "type": "string" },
+    "repositoryRevision": { "type": "string" },
+    "inspectionProfileId": { "const": "repository-overview.v1" },
+    "inspectionAuthorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "observedArtifactCount": { "type": "integer", "minimum": 0 },
+    "presentationAssetCount": { "type": "integer", "minimum": 0 },
+    "unsupportedArtifactCount": { "type": "integer", "minimum": 0 },
+    "inventoryHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "findings": { "type": "array", "items": { "type": "object" } },
+    "assertions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assertionId", "passed"],
+        "properties": {
+          "assertionId": { "type": "string" },
+          "passed": { "type": "boolean" }
+        }
+      }
+    },
+    "disposition": {
+      "enum": [
+        "PRESENTATION_INVENTORY_PRODUCED",
+        "PRESENTATION_INVENTORY_PRODUCED_WITH_FINDINGS",
+        "NO_PRESENTABLE_MATERIAL",
+        "REJECTED_UNRESOLVED_REPOSITORY_SOURCE",
+        "REJECTED_UNSUPPORTED_INSPECTION_PROFILE",
+        "BLOCKED_REPOSITORY_UNREADABLE",
+        "BLOCKED_INSPECTION_SCOPE_VIOLATION",
+        "FAILED_UNCLASSIFIED"
+      ]
+    }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

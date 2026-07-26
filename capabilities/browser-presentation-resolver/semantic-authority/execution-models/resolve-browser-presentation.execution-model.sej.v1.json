@@ -1,0 +1,20 @@
+{
+  "executionModelId": "resolve-browser-presentation",
+  "inputContract": "browser-presentation-request.schema.v1.json",
+  "steps": [
+    {"sequence": 1, "invoke": "validate-browser-presentation-request"},
+    {"sequence": 2, "invoke": "resolve-presentation-surface"},
+    {"sequence": 3, "invoke": "resolve-viewport-profile"},
+    {"sequence": 4, "iterate": "resolve-browser-presentation-scenes"},
+    {"sequence": 5, "project": "project-resolved-browser-presentation"},
+    {"sequence": 6, "validate": "resolved-browser-presentation.schema.v1.json"},
+    {"sequence": 7, "project": "project-browser-presentation-resolution-receipt"}
+  ],
+  "stopWhen": [
+    "request-contract-invalid",
+    "unsupported-presentation-surface",
+    "unsupported-viewport-profile",
+    "scene-target-missing",
+    "scene-operation-profile-unsupported"
+  ]
+}

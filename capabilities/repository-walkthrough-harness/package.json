@@ -1,0 +1,7 @@
+{
+  "name": "@repository-walkthrough/repository-walkthrough-harness",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Compose the capability constellation through public contracts.",
+  "type": "module"
+}

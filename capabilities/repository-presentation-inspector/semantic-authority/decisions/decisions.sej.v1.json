@@ -1,0 +1,281 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "decisionId": "validate-inspection-request",
+      "inputs": [
+        "request.source.repositoryId",
+        "request.source.revision",
+        "request.source.authorizedRoot",
+        "request.profileId",
+        "request.inventoryContractVersion"
+      ],
+      "rules": [
+        {
+          "when": {
+            "request.source.repositoryId": { "present": true },
+            "request.source.revision": { "present": true },
+            "request.source.authorizedRoot": { "present": true },
+            "request.profileId": "repository-overview.v1",
+            "request.inventoryContractVersion": "repository-presentation-inventory.v1"
+          },
+          "then": "accepted-inspection-request"
+        },
+        {
+          "when": {
+            "request.source.repositoryId": { "present": true },
+            "request.source.revision": { "present": true },
+            "request.source.authorizedRoot": { "present": true }
+          },
+          "then": "rejected-unsupported-inspection-profile"
+        },
+        {
+          "when": { "*": true },
+          "then": "rejected-unresolved-repository-source"
+        }
+      ]
+    },
+    {
+      "decisionId": "classify-repository-artifact",
+      "inputs": [
+        "artifact.relativePath",
+        "artifact.fileName",
+        "artifact.extension"
+      ],
+      "rules": [
+        {
+          "when": { "artifact.fileName": { "inCaseInsensitive": ["README.md", "README"] } },
+          "then": "readme-document"
+        },
+        {
+          "when": {
+            "artifact.relativePath": { "matches": "^docs/.+\\.md$" }
+          },
+          "then": "markdown-document"
+        },
+        {
+          "when": {
+            "artifact.relativePath": { "matches": "^features/.+\\.feature$" }
+          },
+          "then": "gherkin-feature"
+        },
+        {
+          "when": {
+            "artifact.relativePath": { "matches": "^semantic-authority/.+\\.json$" }
+          },
+          "then": "semantic-authority"
+        },
+        {
+          "when": {
+            "artifact.relativePath": { "matches": "^contracts/.+\\.schema\\..+\\.json$" }
+          },
+          "then": "json-schema"
+        },
+        {
+          "when": {
+            "artifact.relativePath": { "matches": "^contracts/.+\\.json$" }
+          },
+          "then": "json-contract"
+        },
+        {
+          "when": {
+            "artifact.relativePath": { "matches": "^(src|runtime)/.+\\.ts$" }
+          },
+          "then": "source-file"
+        },
+        {
+          "when": { "*": true },
+          "then": "unsupported-artifact"
+        }
+      ]
+    },
+    {
+      "decisionId": "classify-presentation-unit",
+      "inputs": ["unit.observedKind", "unit.semanticIdentity"],
+      "rules": [
+        { "when": { "unit.observedKind": "markdown-heading" }, "then": "document-section" },
+        { "when": { "unit.observedKind": "markdown-code-block" }, "then": "code-example" },
+        { "when": { "unit.observedKind": "markdown-ascii-diagram" }, "then": "architecture-diagram" },
+        { "when": { "unit.observedKind": "gherkin-feature" }, "then": "feature-definition" },
+        { "when": { "unit.observedKind": "gherkin-scenario" }, "then": "scenario-definition" },
+        { "when": { "unit.observedKind": "semantic-root" }, "then": "semantic-policy" },
+        { "when": { "unit.observedKind": "semantic-decision" }, "then": "semantic-decision" },
+        { "when": { "unit.observedKind": "semantic-projection" }, "then": "semantic-projection" },
+        { "when": { "unit.observedKind": "contract-root" }, "then": "contract-definition" },
+        { "when": { "unit.observedKind": "schema-root" }, "then": "schema-definition" },
+        { "when": { "unit.observedKind": "typescript-exported-operation" }, "then": "public-operation" },
+        { "when": { "unit.observedKind": "typescript-collapsed-body" }, "then": "execution-body" }
+      ]
+    },
+    {
+      "decisionId": "dispatch-supported-artifact-inspection",
+      "inputs": ["artifact.artifactKind"],
+      "rules": [
+        {
+          "when": { "artifact.artifactKind": { "in": ["readme-document", "markdown-document"] } },
+          "then": "observe-markdown-presentation-units"
+        },
+        {
+          "when": { "artifact.artifactKind": "gherkin-feature" },
+          "then": "observe-gherkin-presentation-units"
+        },
+        {
+          "when": { "artifact.artifactKind": { "in": ["semantic-authority", "json-contract", "json-schema"] } },
+          "then": "observe-json-presentation-units"
+        },
+        {
+          "when": { "artifact.artifactKind": "source-file" },
+          "then": "observe-typescript-presentation-units"
+        }
+      ]
+    },
+    {
+      "decisionId": "resolve-artifact-inspection-eligibility",
+      "inputs": [
+        "artifact.symlink",
+        "artifact.readable",
+        "artifact.relativePath",
+        "artifact.size",
+        "profile.maximumArtifactSize"
+      ],
+      "rules": [
+        { "when": { "artifact.symlink": true }, "then": "unsupported-symlink" },
+        { "when": { "artifact.readable": false }, "then": "artifact-unreadable" },
+        {
+          "when": { "artifact.relativePath": { "matches": "(^|/)\\.[^/]+" } },
+          "then": "unsupported-hidden-artifact"
+        },
+        {
+          "when": {
+            "artifact.size": { "greaterThanPath": "profile.maximumArtifactSize" }
+          },
+          "then": "artifact-too-large"
+        },
+        { "when": { "*": true }, "then": "inspect-supported-artifact" }
+      ]
+    },
+    {
+      "decisionId": "resolve-presentation-unit-presentability",
+      "inputs": ["unit.kind", "unit.hasStableIdentity", "artifact.readable"],
+      "rules": [
+        {
+          "when": {
+            "artifact.readable": false
+          },
+          "then": "blocked"
+        },
+        {
+          "when": {
+            "unit.hasStableIdentity": true,
+            "unit.kind": {
+              "in": [
+                "document-section",
+                "architecture-diagram",
+                "feature-definition",
+                "scenario-definition",
+                "semantic-decision",
+                "semantic-projection",
+                "semantic-policy",
+                "public-operation",
+                "execution-body"
+              ]
+            }
+          },
+          "then": "recommended"
+        },
+        {
+          "when": { "unit.hasStableIdentity": true },
+          "then": "available"
+        },
+        {
+          "when": { "*": true },
+          "then": "excluded"
+        }
+      ]
+    },
+    {
+      "decisionId": "resolve-presentation-significance",
+      "inputs": ["unit.kind", "unit.title", "artifact.artifactKind"],
+      "rules": [
+        {
+          "when": {
+            "unit.kind": "document-section",
+            "unit.title": { "matchesCaseInsensitive": "^(purpose|architecture|overview|repository presentation inspector)$" }
+          },
+          "then": "foundational"
+        },
+        {
+          "when": {
+            "unit.kind": {
+              "in": [
+                "feature-definition",
+                "scenario-definition",
+                "semantic-decision",
+                "semantic-projection",
+                "semantic-policy",
+                "public-operation",
+                "execution-body"
+              ]
+            }
+          },
+          "then": "primary"
+        },
+        {
+          "when": {
+            "unit.kind": {
+              "in": ["contract-definition", "schema-definition", "architecture-diagram"]
+            }
+          },
+          "then": "supporting"
+        },
+        {
+          "when": { "*": true },
+          "then": "supplemental"
+        }
+      ]
+    },
+    {
+      "decisionId": "resolve-presentation-readiness",
+      "inputs": ["artifact.readable", "unit.contentLength", "profile.maximumUnitSize"],
+      "rules": [
+        { "when": { "artifact.readable": false }, "then": "blocked" },
+        {
+          "when": {
+            "unit.contentLength": { "greaterThanPath": "profile.maximumUnitSize" }
+          },
+          "then": "requires-expansion"
+        },
+        { "when": { "*": true }, "then": "ready" }
+      ]
+    },
+    {
+      "decisionId": "resolve-inspection-disposition",
+      "inputs": [
+        "execution.blockingFailure",
+        "execution.findingCount",
+        "summary.presentationAssetCount",
+        "summary.unsupportedArtifactCount"
+      ],
+      "rules": [
+        {
+          "when": { "execution.blockingFailure": "repository-unreadable" },
+          "then": "BLOCKED_REPOSITORY_UNREADABLE"
+        },
+        {
+          "when": { "summary.presentationAssetCount": 0 },
+          "then": "NO_PRESENTABLE_MATERIAL"
+        },
+        {
+          "when": { "execution.findingCount": { "greaterThan": 0 } },
+          "then": "PRESENTATION_INVENTORY_PRODUCED_WITH_FINDINGS"
+        },
+        {
+          "when": { "*": true },
+          "then": "PRESENTATION_INVENTORY_PRODUCED"
+        }
+      ]
+    }
+  ]
+}

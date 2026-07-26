@@ -1,0 +1,11 @@
+{
+  "iterationId": "resolve-browser-presentation-scenes",
+  "collection": "$.request.scenes",
+  "order": "ascending-scene-sequence",
+  "forEach": {
+    "invoke": "resolve-scene-operation-profile",
+    "project": "project-browser-presentation-operations"
+  },
+  "stopWhen": ["blocking-scene-finding"],
+  "collect": "resolved-browser-scenes"
+}

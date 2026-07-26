@@ -1,0 +1,21 @@
+{
+  "semanticType": "failure-policy.v1",
+  "responsibilityId": "repository-source-resolution-failure-policy",
+  "status": "implemented-first-slice",
+  "classifications": [
+    { "finding": "invalid-source-request", "resolveAs": "INVALID_SOURCE_REQUEST" },
+    { "finding": "unsupported-reference", "resolveAs": "UNSUPPORTED_REFERENCE" },
+    { "finding": "ambiguous-reference", "resolveAs": "AMBIGUOUS_REFERENCE" },
+    { "finding": "unsupported-provider", "resolveAs": "UNSUPPORTED_PROVIDER" },
+    { "finding": "repository-not-found", "resolveAs": "REPOSITORY_NOT_FOUND" },
+    { "finding": "repository-access-denied", "resolveAs": "REPOSITORY_ACCESS_DENIED" },
+    { "finding": "provider-unreachable", "resolveAs": "PROVIDER_UNREACHABLE" },
+    { "finding": "revision-not-found", "resolveAs": "REVISION_NOT_FOUND" },
+    { "finding": "revision-not-immutable", "resolveAs": "REVISION_NOT_IMMUTABLE" },
+    { "finding": "presentation-entrypoint-not-found", "resolveAs": "PRESENTATION_ENTRYPOINT_NOT_FOUND" },
+    { "finding": "presentation-entrypoint-outside-repository", "resolveAs": "PRESENTATION_ENTRYPOINT_OUTSIDE_REPOSITORY" },
+    { "finding": "*", "resolveAs": "SOURCE_RESOLUTION_FAILED" }
+  ],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

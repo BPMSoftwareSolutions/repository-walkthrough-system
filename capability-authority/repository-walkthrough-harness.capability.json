@@ -1,0 +1,36 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "repository-walkthrough-harness",
+  "title": "Repository Walkthrough Harness",
+  "outcome": "Compose the capability constellation through public contracts.",
+  "owns": [
+    "walkthrough request",
+    "capability invocation",
+    "capability result",
+    "execution context",
+    "composition",
+    "walkthrough outcome"
+  ],
+  "mustNotOwn": [
+    "README parsing",
+    "story beat construction",
+    "CSS selector",
+    "scroll speed",
+    "Playwright launch",
+    "FFmpeg launch",
+    "video metadata interpretation"
+  ],
+  "publicContract": "capabilities/repository-walkthrough-harness/contracts/proven-repository-walkthrough.schema.v1.json",
+  "dependencies": [
+    "repository-source-resolver",
+    "repository-presentation-inspector",
+    "walkthrough-story-resolver",
+    "walkthrough-scene-planner",
+    "browser-presentation-resolver",
+    "browser-walkthrough-executor",
+    "screen-recording-controller",
+    "walkthrough-scene-observer",
+    "recording-proof-builder"
+  ],
+  "status": "scaffold"
+}

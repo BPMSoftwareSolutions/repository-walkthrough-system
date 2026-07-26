@@ -1,0 +1,43 @@
+{
+  "contractType": "deterministic-capability-body.v1",
+  "capabilityId": "browser-presentation-resolver",
+  "owns": [
+    "browser-presentation-surface",
+    "semantic-browser-target",
+    "viewport-profile",
+    "browser-presentation-operation-authority",
+    "operation-order",
+    "settlement-condition",
+    "browser-presentation-resolution-receipt"
+  ],
+  "mustNotOwn": [
+    "css-selector",
+    "xpath",
+    "dom-query",
+    "playwright-command",
+    "puppeteer-command",
+    "browser-session-lifecycle",
+    "screen-recording",
+    "walkthrough-story",
+    "scene-observation",
+    "recording-proof"
+  ],
+  "publicOperation": "resolvesBrowserPresentation",
+  "runtimeBodies": [
+    "runtime/resolves-browser-presentation-authority.ts",
+    "runtime/executes-browser-presentation-resolution.ts",
+    "runtime/projects-resolved-browser-presentation.ts",
+    "runtime/resolves-browser-presentation.ts"
+  ],
+  "requiredAuthority": [
+    "semantic-authority/decisions/resolve-presentation-surface.sej.v1.json",
+    "semantic-authority/decisions/resolve-viewport-profile.sej.v1.json",
+    "semantic-authority/decisions/resolve-scene-operation-profile.sej.v1.json",
+    "semantic-authority/projections/project-browser-presentation-operations.sej.v1.json",
+    "semantic-authority/projections/project-resolved-browser-presentation.sej.v1.json",
+    "semantic-authority/execution-models/resolve-browser-presentation.execution-model.sej.v1.json",
+    "semantic-authority/execution-models/resolve-browser-presentation-scenes.iteration.sej.v1.json",
+    "semantic-authority/policies/browser-presentation-resolution.policy.sej.v1.json",
+    "semantic-authority/proof/browser-presentation-resolution-proof.sej.v1.json"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "semanticType": "proof-requirements.v1",
+  "proofContractId": "repository-walkthrough-system-proof.v1",
+  "status": "scaffold",
+  "requiredAssertions": [
+    "walkthrough-request-identity-recorded",
+    "composition-authority-hash-recorded",
+    "every-required-capability-receipt-recorded",
+    "recording-proof-recorded",
+    "final-system-disposition-recorded"
+  ]
+}

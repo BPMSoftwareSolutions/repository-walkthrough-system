@@ -1,0 +1,48 @@
+{
+  "semanticType": "projection-catalog.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "projectionId": "project-repository-walkthrough-scene",
+      "targetContract": "walkthrough-scene.v1",
+      "fields": {
+        "sceneId": "scene-{storyBeat.storyBeatId}",
+        "storyBeatId": "$.storyBeat.storyBeatId",
+        "sequence": "$.resolvedSequence",
+        "purpose": "$.sceneResolution.scenePurpose",
+        "visualSource.assetId": "$.asset.assetId",
+        "visualSubject.kind": "$.sceneResolution.visualSubjectKind",
+        "visualSubject.semanticAnchor": "$.asset.location.semanticAnchor",
+        "presentationIntent": "$.sceneResolution.presentationIntent",
+        "entrance": "$.entrance",
+        "exit": "$.exit",
+        "continuityGroup": "$.storyBeat.continuityGroup"
+      }
+    },
+    {
+      "projectionId": "project-repository-walkthrough-scene-plan",
+      "targetContract": "walkthrough-scene-plan.v1",
+      "fields": {
+        "contractType": "walkthrough-scene-plan.v1",
+        "planId": "{request.requestId}-plan",
+        "storyId": "$.request.story.storyId",
+        "repositoryId": "$.request.story.repositoryId",
+        "scenes": "$.resolvedScenes",
+        "coverage": "$.coverage",
+        "disposition": "$.coverage.disposition"
+      }
+    },
+    {
+      "projectionId": "project-repository-walkthrough-scene-planning-result",
+      "targetContract": "repository-walkthrough-scene-planning-result.v1",
+      "fields": {
+        "contractType": "repository-walkthrough-scene-planning-result.v1",
+        "disposition": "$.scenePlan.disposition",
+        "plan": "$.scenePlan",
+        "receipt": "$.receipt",
+        "findings": "$.findings"
+      }
+    }
+  ]
+}

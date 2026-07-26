@@ -1,0 +1,1 @@
+# Scenario: resolves-explicit-branch

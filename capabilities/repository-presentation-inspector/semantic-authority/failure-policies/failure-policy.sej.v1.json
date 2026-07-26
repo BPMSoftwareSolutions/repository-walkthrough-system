@@ -1,0 +1,39 @@
+{
+  "semanticType": "failure-policy.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "classifications": [
+    {
+      "observedFailure": "missing-resolved-repository-identity-or-revision",
+      "disposition": "REJECTED_UNRESOLVED_REPOSITORY_SOURCE",
+      "continuation": "stop-before-effects"
+    },
+    {
+      "observedFailure": "unsupported-inspection-profile",
+      "disposition": "REJECTED_UNSUPPORTED_INSPECTION_PROFILE",
+      "continuation": "stop-before-effects"
+    },
+    {
+      "observedFailure": "authorized-root-unreadable",
+      "disposition": "BLOCKED_REPOSITORY_UNREADABLE",
+      "continuation": "stop"
+    },
+    {
+      "observedFailure": "repository-path-escapes-authorized-root",
+      "disposition": "BLOCKED_INSPECTION_SCOPE_VIOLATION",
+      "continuation": "stop"
+    },
+    {
+      "observedFailure": "unsupported-artifact",
+      "disposition": "PRESENTATION_INVENTORY_PRODUCED_WITH_FINDINGS",
+      "continuation": "preserve-supported-material"
+    },
+    {
+      "observedFailure": "no-supported-presentable-material",
+      "disposition": "NO_PRESENTABLE_MATERIAL",
+      "continuation": "produce-empty-inventory"
+    }
+  ],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

@@ -1,0 +1,17 @@
+{
+  "semanticType": "proof-requirements.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "requiredAssertions": [
+    "resolved-repository-source-identity-recorded",
+    "repository-revision-recorded",
+    "inspection-authority-hash-recorded",
+    "every-inventory-asset-references-an-observed-artifact",
+    "every-presentable-unit-has-a-stable-semantic-anchor",
+    "every-unsupported-artifact-has-a-declared-finding",
+    "canonical-ordering-applied",
+    "inventory-contract-validation-passed",
+    "inventory-content-hash-recorded",
+    "inspection-disposition-recorded"
+  ]
+}

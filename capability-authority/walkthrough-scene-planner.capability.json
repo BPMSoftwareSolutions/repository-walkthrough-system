@@ -1,0 +1,29 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "title": "Walkthrough Scene Planner",
+  "outcome": "Produce an ordered scene model from a resolved story.",
+  "owns": [
+    "scene",
+    "visual source",
+    "visual subject",
+    "scene purpose",
+    "entrance",
+    "presentation state",
+    "focus target",
+    "exit",
+    "scene sequence",
+    "scene transition"
+  ],
+  "mustNotOwn": [
+    "Playwright",
+    "CSS selector",
+    "physical scrolling",
+    "video codec"
+  ],
+  "publicContract": "capabilities/walkthrough-scene-planner/contracts/walkthrough-scene-plan.schema.v1.json",
+  "dependencies": [
+    "walkthrough-story-resolver"
+  ],
+  "status": "scaffold"
+}

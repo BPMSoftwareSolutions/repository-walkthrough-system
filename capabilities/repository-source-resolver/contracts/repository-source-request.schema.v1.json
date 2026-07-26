@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-source-request.schema.v1.json",
+  "title": "Repository Source Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "requestId", "reference", "resolutionPolicy"],
+  "properties": {
+    "contractType": { "const": "repository-source-request.v1" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "reference": { "type": "string", "minLength": 1 },
+    "providerHint": { "type": "string", "enum": ["github"] },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "kindHint"],
+      "properties": {
+        "value": { "type": "string", "minLength": 1 },
+        "kindHint": { "enum": ["branch", "tag", "commit"] }
+      }
+    },
+    "presentationEntrypoint": { "type": "string", "minLength": 1 },
+    "resolutionPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unknownProvider", "missingRevision", "ambiguousReference", "inaccessibleRepository", "missingEntrypoint"],
+      "properties": {
+        "unknownProvider": { "const": "reject" },
+        "missingRevision": { "const": "reject" },
+        "ambiguousReference": { "const": "reject" },
+        "inaccessibleRepository": { "const": "reject" },
+        "missingEntrypoint": { "enum": ["use-readme", "use-repository-root", "reject"] }
+      }
+    }
+  },
+  "x-capability-id": "repository-source-resolver",
+  "x-status": "implemented-first-slice"
+}

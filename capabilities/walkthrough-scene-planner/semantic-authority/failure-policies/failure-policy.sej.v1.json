@@ -1,0 +1,38 @@
+{
+  "semanticType": "failure-policy.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "failurePolicyId": "repository-walkthrough-scene-planning-failure-policy",
+  "status": "implemented-first-slice",
+  "classifications": [
+    {
+      "failureCode": "INVALID_SCENE_PLANNING_REQUEST",
+      "resolveAs": "reject-invalid-scene-planning-request"
+    },
+    {
+      "failureCode": "STORY_BEAT_HAS_NO_PRESENTATION_ASSET",
+      "resolveAs": "reject-missing-presentation-asset"
+    },
+    {
+      "failureCode": "PRESENTATION_ASSET_NOT_ADMITTED",
+      "resolveAs": "reject-unrecognized-presentation-asset"
+    },
+    {
+      "failureCode": "REQUIRED_STORY_BEAT_NOT_COVERED",
+      "resolveAs": "reject-incomplete-story-coverage"
+    },
+    {
+      "failureCode": "SCENE_CONTAINS_BROWSER_MECHANICS",
+      "resolveAs": "reject-boundary-contamination"
+    },
+    {
+      "failureCode": "AMBIGUOUS_SCENE_SEQUENCE",
+      "resolveAs": "reject-ambiguous-scene-order"
+    },
+    {
+      "failureCode": "UNSUPPORTED_STORY_BEAT",
+      "resolveAs": "reject-unsupported-story-beat"
+    }
+  ],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

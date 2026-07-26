@@ -1,0 +1,21 @@
+{
+  "semanticType": "failure-policy.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "authority": "../failures/repository-source-resolution-failure-policy.sej.v1.json",
+  "classifications": [
+    "invalid-source-request",
+    "unsupported-reference",
+    "ambiguous-reference",
+    "unsupported-provider",
+    "repository-not-found",
+    "repository-access-denied",
+    "provider-unreachable",
+    "revision-not-found",
+    "revision-not-immutable",
+    "presentation-entrypoint-not-found",
+    "presentation-entrypoint-outside-repository"
+  ],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

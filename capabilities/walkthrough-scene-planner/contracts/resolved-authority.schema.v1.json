@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-authority.schema.v1.json",
+  "title": "Resolved Repository Walkthrough Scene Planning Authority",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "authorityType",
+    "planningId",
+    "request",
+    "authorityHash",
+    "operations",
+    "failurePolicyId",
+    "proofContractId"
+  ],
+  "properties": {
+    "authorityType": {
+      "const": "resolved-repository-walkthrough-scene-planning.v1"
+    },
+    "planningId": { "type": "string", "minLength": 1 },
+    "request": { "$ref": "scene-planning-request.schema.v1.json" },
+    "authorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "operations": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sequence", "operation", "authorityId"],
+        "properties": {
+          "sequence": { "type": "integer", "minimum": 1 },
+          "operation": { "type": "string", "minLength": 1 },
+          "authorityId": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "failurePolicyId": {
+      "const": "repository-walkthrough-scene-planning-failure-policy"
+    },
+    "proofContractId": {
+      "const": "repository-walkthrough-scene-planning-proof.v1"
+    }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

@@ -1,0 +1,49 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "responsibilityId": "resolves-presentation-entrypoint",
+  "status": "implemented-first-slice",
+  "decisionId": "resolve-presentation-entrypoint",
+  "inputs": [
+    "request.presentationEntrypoint",
+    "entrypointObservation.exists",
+    "entrypoint.withinRepository"
+  ],
+  "rules": [
+    {
+      "when": {
+        "entrypoint.withinRepository": false
+      },
+      "then": "reject-entrypoint-outside-repository"
+    },
+    {
+      "when": {
+        "request.presentationEntrypoint": {
+          "present": true
+        },
+        "entrypointObservation.exists": true
+      },
+      "then": "use-requested-entrypoint"
+    },
+    {
+      "when": {
+        "request.presentationEntrypoint": {
+          "present": true
+        },
+        "entrypointObservation.exists": false
+      },
+      "then": "reject-entrypoint-not-found"
+    },
+    {
+      "when": {
+        "readmeObservation.exists": true
+      },
+      "then": "use-readme"
+    },
+    {
+      "when": {
+        "repository.root.observable": true
+      },
+      "then": "use-repository-root"
+    }
+  ]
+}

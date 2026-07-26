@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt.schema.v1.json",
+  "title": "Walkthrough Scene Planner Receipt Alias",
+  "type": "object",
+  "$ref": "scene-planning-receipt.schema.v1.json",
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

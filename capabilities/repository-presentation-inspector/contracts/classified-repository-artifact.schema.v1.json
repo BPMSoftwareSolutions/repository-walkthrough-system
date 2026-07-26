@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classified-repository-artifact.schema.v1.json",
+  "title": "Classified Repository Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "artifactId",
+    "relativePath",
+    "fileName",
+    "extension",
+    "size",
+    "contentHash",
+    "readable",
+    "symlink",
+    "artifactKind"
+  ],
+  "properties": {
+    "contractType": { "const": "classified-repository-artifact.v1" },
+    "artifactId": { "type": "string" },
+    "relativePath": { "type": "string", "minLength": 1 },
+    "fileName": { "type": "string", "minLength": 1 },
+    "extension": { "type": "string" },
+    "size": { "type": "integer", "minimum": 0 },
+    "contentHash": {
+      "oneOf": [
+        { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        { "type": "null" }
+      ]
+    },
+    "readable": { "type": "boolean" },
+    "symlink": { "type": "boolean" },
+    "artifactKind": {
+      "enum": [
+        "readme-document",
+        "markdown-document",
+        "gherkin-feature",
+        "semantic-authority",
+        "json-contract",
+        "json-schema",
+        "source-file",
+        "unsupported-artifact"
+      ]
+    }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

@@ -1,0 +1,11 @@
+node_modules/
+coverage/
+dist/
+build/
+.env
+.env.*
+!.env.example
+artifacts/
+recordings/
+receipts/local/
+*.log

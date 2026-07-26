@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "readme-presentation-inventory.schema.v1.json",
+  "title": "README Presentation Inventory",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "readme-presentation-inventory.v1" }
+  },
+  "status": "scaffold"
+}

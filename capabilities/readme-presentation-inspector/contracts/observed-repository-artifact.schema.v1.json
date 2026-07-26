@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observed-repository-artifact.schema.v1.json",
+  "title": "Repository Presentation Inspector Observed Repository Artifact",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "observed-repository-artifact.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "scaffold"
+}

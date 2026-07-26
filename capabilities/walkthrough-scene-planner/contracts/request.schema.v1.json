@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "request.schema.v1.json",
+  "title": "Walkthrough Scene Planner Request Alias",
+  "type": "object",
+  "$ref": "scene-planning-request.schema.v1.json",
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

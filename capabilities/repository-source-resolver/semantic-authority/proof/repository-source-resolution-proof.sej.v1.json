@@ -1,0 +1,31 @@
+{
+  "semanticType": "proof-requirements.v1",
+  "responsibilityId": "repository-source-resolution-proof",
+  "status": "implemented-first-slice",
+  "proofContractId": "repository-source-resolution-proof.v1",
+  "requiredAssertions": [
+    "submitted-reference-recorded",
+    "recognition-authority-recorded",
+    "repository-provider-recorded",
+    "canonical-repository-identity-recorded",
+    "repository-access-observed",
+    "requested-revision-preserved",
+    "immutable-commit-recorded",
+    "presentation-entrypoint-recorded",
+    "credential-material-not-recorded",
+    "resolved-source-contract-valid",
+    "source-authority-hash-recorded",
+    "final-disposition-recorded"
+  ],
+  "blockingFindings": [
+    "unsupported-reference",
+    "ambiguous-reference",
+    "repository-not-found",
+    "repository-access-denied",
+    "revision-not-found",
+    "revision-not-immutable",
+    "presentation-entrypoint-outside-repository",
+    "credential-material-exposed",
+    "resolved-source-contract-invalid"
+  ]
+}

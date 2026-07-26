@@ -1,0 +1,29 @@
+{
+  "requestId": "request-001",
+  "walkthroughId": "present-file-system-shaper",
+  "surface": {
+    "surfaceId": "github-repository",
+    "kind": "repository-web",
+    "baseReference": "https://example.invalid/deterministic-solutions/file-system-shaper"
+  },
+  "viewportProfile": "desktop-wide",
+  "scenes": [
+    {
+      "sceneId": "show-semantic-contract",
+      "sequence": 1,
+      "purpose": "explain-semantic-contract",
+      "visualSource": {
+        "assetId": "file-system-shape-contract",
+        "assetKind": "repository-file",
+        "path": "semantic-authority/file-system-shape.sej.v1.json"
+      },
+      "visualSubject": {
+        "kind": "document-fragment",
+        "semanticAnchor": "placements"
+      },
+      "presentationIntent": "focus",
+      "transitionIn": "open-source",
+      "transitionOut": "retain-context"
+    }
+  ]
+}

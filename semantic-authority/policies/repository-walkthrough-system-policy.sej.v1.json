@@ -1,0 +1,11 @@
+{
+  "semanticType": "system-policy.v1",
+  "policyId": "repository-walkthrough-system-policy",
+  "status": "scaffold",
+  "rules": [
+    "reject-unresolved-capability-authority-before-effects",
+    "invoke-capabilities-through-published-contracts-only",
+    "do-not-infer-proof-from-artifact-existence",
+    "do-not-apply-implicit-fallback-or-retry"
+  ]
+}

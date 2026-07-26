@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "browser-walkthrough-executor",
+  "title": "Browser Walkthrough Executor",
+  "purpose": "Mechanically execute a resolved browser plan and emit testimony.",
+  "actor": "authorized-caller",
+  "trigger": "a resolved browser walkthrough is submitted",
+  "desiredOutcome": "authorized browser operations are executed in order and mechanical testimony is recorded",
+  "constraints": [
+    "canonical meaning is limited to browser execution testimony",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions",
+    "effects occur only through declared ports and produce proof receipts"
+  ],
+  "featureIds": [
+    "execute-a-resolved-browser-walkthrough"
+  ],
+  "status": "scaffold"
+}

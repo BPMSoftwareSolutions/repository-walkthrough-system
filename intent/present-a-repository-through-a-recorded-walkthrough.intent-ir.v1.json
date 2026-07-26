@@ -1,0 +1,19 @@
+{
+  "$schema": "../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "repository-walkthrough-system",
+  "title": "Present a repository through a recorded walkthrough",
+  "purpose": "Compose independently governed capabilities to produce a proven repository walkthrough recording.",
+  "actor": "authorized-caller",
+  "trigger": "a repository walkthrough request is submitted",
+  "desiredOutcome": "a recording and proof establish that the declared repository story was visibly presented",
+  "constraints": [
+    "composition uses published capability contracts only",
+    "capability-specific decisions remain within the capability that owns their meaning",
+    "no recording is declared proven from artifact existence alone",
+    "all effects are authorized before execution and represented in receipts"
+  ],
+  "featureIds": [
+    "present-a-repository-through-a-recorded-walkthrough"
+  ],
+  "status": "scaffold"
+}

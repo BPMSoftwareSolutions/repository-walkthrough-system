@@ -1,0 +1,7 @@
+{
+  "name": "@repository-walkthrough/walkthrough-story-resolver",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Produce the semantic story the walkthrough intends to communicate.",
+  "type": "module"
+}

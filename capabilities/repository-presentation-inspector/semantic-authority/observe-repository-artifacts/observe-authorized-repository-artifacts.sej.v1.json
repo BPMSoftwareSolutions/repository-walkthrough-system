@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "observationId": "observe-authorized-repository-artifacts",
+  "authorityCatalog": "../observations/observations.sej.v1.json",
+  "status": "implemented-first-slice"
+}

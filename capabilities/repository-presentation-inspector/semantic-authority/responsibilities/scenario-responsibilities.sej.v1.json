@@ -1,0 +1,57 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "responsibilities": [
+    {
+      "responsibilityId": "validate-inspection-request",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-inspection-profile",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "observe-repository-artifacts",
+      "sequence": 3,
+      "kind": "observation"
+    },
+    {
+      "responsibilityId": "classify-repository-artifacts",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "inspect-supported-artifact-content",
+      "sequence": 5,
+      "kind": "observation"
+    },
+    {
+      "responsibilityId": "classify-presentation-units",
+      "sequence": 6,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-presentation-anchors",
+      "sequence": 7,
+      "kind": "projection"
+    },
+    {
+      "responsibilityId": "resolve-presentability-significance-and-readiness",
+      "sequence": 8,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "order-repository-presentation-assets",
+      "sequence": 9,
+      "kind": "execution-model"
+    },
+    {
+      "responsibilityId": "project-repository-presentation-inventory-and-receipt",
+      "sequence": 10,
+      "kind": "projection"
+    }
+  ]
+}

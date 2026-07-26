@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scene-planning-receipt.schema.v1.json",
+  "title": "Repository Walkthrough Scene Planning Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receiptType",
+    "runId",
+    "requestId",
+    "planId",
+    "storyHash",
+    "presentationInventoryHash",
+    "authorityHash",
+    "scenePlanHash",
+    "requiredStoryBeatCount",
+    "coveredStoryBeatCount",
+    "sceneCount",
+    "boundaryContaminationFindings",
+    "findings",
+    "assertions",
+    "disposition"
+  ],
+  "properties": {
+    "receiptType": {
+      "const": "repository-walkthrough-scene-planning-receipt.v1"
+    },
+    "runId": { "type": "string", "minLength": 1 },
+    "requestId": { "type": "string", "minLength": 1 },
+    "planId": { "type": "string", "minLength": 1 },
+    "storyHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "presentationInventoryHash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "authorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "scenePlanHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "requiredStoryBeatCount": { "type": "integer", "minimum": 0 },
+    "coveredStoryBeatCount": { "type": "integer", "minimum": 0 },
+    "sceneCount": { "type": "integer", "minimum": 0 },
+    "boundaryContaminationFindings": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assertionId", "passed"],
+        "properties": {
+          "assertionId": { "type": "string", "minLength": 1 },
+          "passed": { "const": true }
+        }
+      }
+    },
+    "disposition": {
+      "enum": ["SCENE_PLAN_PROVEN", "SCENE_PLAN_REJECTION_PROVEN"]
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["findingId", "failureCode", "disposition", "storyBeatId"],
+      "properties": {
+        "findingId": { "type": "string", "minLength": 1 },
+        "failureCode": {
+          "enum": [
+            "INVALID_SCENE_PLANNING_REQUEST",
+            "STORY_BEAT_HAS_NO_PRESENTATION_ASSET",
+            "PRESENTATION_ASSET_NOT_ADMITTED",
+            "REQUIRED_STORY_BEAT_NOT_COVERED",
+            "SCENE_CONTAINS_BROWSER_MECHANICS",
+            "AMBIGUOUS_SCENE_SEQUENCE",
+            "UNSUPPORTED_STORY_BEAT"
+          ]
+        },
+        "disposition": { "const": "blocking" },
+        "storyBeatId": { "type": ["string", "null"] }
+      }
+    }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

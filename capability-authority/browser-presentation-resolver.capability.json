@@ -1,0 +1,28 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "browser-presentation-resolver",
+  "title": "Browser Presentation Resolver",
+  "outcome": "Produce an executable browser presentation plan.",
+  "owns": [
+    "browser presentation",
+    "navigation",
+    "viewport",
+    "scroll path",
+    "focus action",
+    "presentation action",
+    "page target",
+    "target locator",
+    "settling condition",
+    "browser state"
+  ],
+  "mustNotOwn": [
+    "educational emphasis",
+    "recording codec",
+    "scene proof disposition"
+  ],
+  "publicContract": "capabilities/browser-presentation-resolver/contracts/resolved-browser-walkthrough.schema.v1.json",
+  "dependencies": [
+    "walkthrough-scene-planner"
+  ],
+  "status": "scaffold"
+}

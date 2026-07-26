@@ -1,0 +1,7 @@
+{
+  "name": "@repository-walkthrough/screen-recording-controller",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Capture an authorized visual session as an inspectable recording artifact.",
+  "type": "module"
+}

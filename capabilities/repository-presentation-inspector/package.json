@@ -1,0 +1,12 @@
+{
+  "name": "@repository-walkthrough/repository-presentation-inspector",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Produce an inventory of presentable repository material.",
+  "type": "module",
+  "exports": "./dist/application/inspects-repository-presentation.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/proof/repository-presentation-inspector.test.js"
+  }
+}

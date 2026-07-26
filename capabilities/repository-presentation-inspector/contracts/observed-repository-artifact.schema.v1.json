@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observed-repository-artifact.schema.v1.json",
+  "title": "Observed Repository Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "artifactId",
+    "relativePath",
+    "fileName",
+    "extension",
+    "size",
+    "contentHash",
+    "readable",
+    "symlink"
+  ],
+  "properties": {
+    "contractType": { "const": "observed-repository-artifact.v1" },
+    "artifactId": { "type": "string", "minLength": 1 },
+    "relativePath": { "type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$" },
+    "fileName": { "type": "string", "minLength": 1 },
+    "extension": { "type": "string" },
+    "size": { "type": "integer", "minimum": 0 },
+    "contentHash": {
+      "oneOf": [
+        { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        { "type": "null" }
+      ]
+    },
+    "readable": { "type": "boolean" },
+    "symlink": { "type": "boolean" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

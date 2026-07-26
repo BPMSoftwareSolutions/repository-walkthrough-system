@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "presentation-anchor.schema.v1.json",
+  "title": "Presentation Anchor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "anchorId", "anchorKind", "artifactPath", "sourceIdentity"],
+  "properties": {
+    "contractType": { "const": "presentation-anchor.v1" },
+    "anchorId": { "type": "string", "minLength": 1 },
+    "anchorKind": { "type": "string", "minLength": 1 },
+    "artifactPath": { "type": "string", "minLength": 1 },
+    "sourceIdentity": { "type": "object" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

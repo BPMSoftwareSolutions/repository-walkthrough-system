@@ -1,0 +1,24 @@
+{
+  "name": "repository-walkthrough-system",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Composition authority for independently governed repository walkthrough capabilities.",
+  "type": "module",
+  "scripts": {
+    "scaffold:generate": "node scripts/scaffold-capabilities.mjs",
+    "scaffold:check": "node scripts/check-scaffold.mjs",
+    "test": "npm run scaffold:check && npm run test --workspace @repository-walkthrough/repository-source-resolver && npm run test --workspace @repository-walkthrough/repository-presentation-inspector && npm run test --workspace @repository-walkthrough/walkthrough-scene-planner"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "capabilities/*"
+  ],
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "typescript": "5.9.2"
+  }
+}

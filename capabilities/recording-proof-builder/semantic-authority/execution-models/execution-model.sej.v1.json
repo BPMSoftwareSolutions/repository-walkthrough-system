@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "recording-proof-builder",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-recording-proof-builder-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-recording-proof-builder"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-recording-proof-builder-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

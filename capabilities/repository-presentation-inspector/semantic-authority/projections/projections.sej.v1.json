@@ -1,0 +1,75 @@
+{
+  "semanticType": "projection-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "projectionId": "project-semantic-presentation-anchor",
+      "from": "classified-presentation-unit",
+      "to": "presentation-anchor.v1",
+      "fields": {
+        "anchorId": "$.unit.semanticIdentity",
+        "anchorKind": "$.unit.kind",
+        "artifactPath": "$.artifact.relativePath",
+        "sourceIdentity": "$.unit.sourceIdentity"
+      }
+    },
+    {
+      "projectionId": "project-presentation-asset",
+      "from": "resolved-presentation-unit",
+      "to": "presentation-asset.v1",
+      "fields": {
+        "contractType": { "value": "presentation-asset.v1" },
+        "assetId": "$.unit.assetId",
+        "artifactId": "$.artifact.artifactId",
+        "kind": "$.unit.kind",
+        "title": "$.unit.title",
+        "location.repositoryRelativePath": "$.artifact.relativePath",
+        "location.semanticAnchor": "$.unit.anchor.anchorId",
+        "source.artifactKind": "$.artifact.artifactKind",
+        "source.startLine": "$.unit.startLine",
+        "source.endLine": "$.unit.endLine",
+        "source.contentHash": "$.artifact.contentHash",
+        "presentation.presentability": "$.unit.presentability",
+        "presentation.significance": "$.unit.significance",
+        "presentation.readiness": "$.unit.readiness",
+        "findings": "$.unit.findings"
+      }
+    },
+    {
+      "projectionId": "project-repository-presentation-inventory",
+      "from": "executed-repository-presentation-inspection",
+      "to": "repository-presentation-inventory.v1",
+      "fields": {
+        "inventoryType": { "value": "repository-presentation-inventory.v1" },
+        "inventoryId": "$.authority.inventoryId",
+        "repository": "$.authority.repository",
+        "inspection": "$.inspection",
+        "summary": "$.summary",
+        "assets": "$.assets",
+        "findings": "$.findings",
+        "disposition": "$.disposition",
+        "inventoryHash": "$.inventoryHash"
+      }
+    },
+    {
+      "projectionId": "project-repository-presentation-inspection-receipt",
+      "from": "executed-repository-presentation-inspection",
+      "to": "repository-presentation-inspection-receipt.v1",
+      "fields": {
+        "receiptType": { "value": "repository-presentation-inspection-receipt.v1" },
+        "runId": "$.authority.inspectionId",
+        "repositoryId": "$.authority.repository.repositoryId",
+        "repositoryRevision": "$.authority.repository.revision",
+        "inspectionProfileId": "$.authority.profile.profileId",
+        "inspectionAuthorityHash": "$.authority.authorityHash",
+        "observedArtifactCount": "$.summary.observedArtifactCount",
+        "presentationAssetCount": "$.summary.presentationAssetCount",
+        "unsupportedArtifactCount": "$.summary.unsupportedArtifactCount",
+        "inventoryHash": "$.inventoryHash",
+        "findings": "$.findings",
+        "disposition": "$.disposition"
+      }
+    }
+  ]
+}

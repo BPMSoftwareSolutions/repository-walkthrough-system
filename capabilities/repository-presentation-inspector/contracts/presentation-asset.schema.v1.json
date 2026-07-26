@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "presentation-asset.schema.v1.json",
+  "title": "Presentation Asset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "assetId",
+    "artifactId",
+    "kind",
+    "title",
+    "location",
+    "source",
+    "presentation",
+    "relationships",
+    "findings"
+  ],
+  "properties": {
+    "contractType": { "const": "presentation-asset.v1" },
+    "assetId": { "type": "string", "minLength": 1 },
+    "artifactId": { "type": "string", "minLength": 1 },
+    "kind": {
+      "enum": [
+        "document-section",
+        "architecture-diagram",
+        "code-example",
+        "feature-definition",
+        "scenario-definition",
+        "semantic-decision",
+        "semantic-projection",
+        "semantic-policy",
+        "contract-definition",
+        "schema-definition",
+        "public-operation",
+        "execution-body"
+      ]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repositoryRelativePath", "semanticAnchor"],
+      "properties": {
+        "repositoryRelativePath": { "type": "string", "minLength": 1 },
+        "semanticAnchor": { "type": "string", "minLength": 1 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifactKind", "startLine", "endLine", "contentHash"],
+      "properties": {
+        "artifactKind": { "type": "string" },
+        "startLine": { "type": "integer", "minimum": 1 },
+        "endLine": { "type": "integer", "minimum": 1 },
+        "contentHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["presentability", "significance", "readiness", "supportedSurfaces"],
+      "properties": {
+        "presentability": { "enum": ["recommended", "available", "supporting", "excluded", "unsupported", "blocked"] },
+        "significance": { "enum": ["foundational", "primary", "supporting", "supplemental", "incidental"] },
+        "readiness": { "enum": ["ready", "ready-with-findings", "requires-renderer", "requires-expansion", "requires-transformation", "blocked"] },
+        "supportedSurfaces": {
+          "type": "array",
+          "items": { "enum": ["repository-browser", "markdown-renderer", "source-viewer"] },
+          "uniqueItems": true
+        }
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parentAssetId", "childAssetIds", "relatedAssetIds"],
+      "properties": {
+        "parentAssetId": { "type": ["string", "null"] },
+        "childAssetIds": { "type": "array", "items": { "type": "string" } },
+        "relatedAssetIds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "findings": { "type": "array", "items": { "type": "object" } }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

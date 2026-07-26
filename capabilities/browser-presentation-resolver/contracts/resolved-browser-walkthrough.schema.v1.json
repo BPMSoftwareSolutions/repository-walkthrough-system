@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-browser-walkthrough.schema.v1.json",
+  "title": "Browser Presentation Resolver Resolved Browser Walkthrough",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "resolved-browser-walkthrough.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "browser-presentation-resolver",
+  "x-status": "scaffold"
+}

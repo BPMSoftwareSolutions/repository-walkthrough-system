@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-walkthrough-capability-result.schema.v1.json",
+  "title": "Repository Walkthrough Harness Repository Walkthrough Capability Result",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "repository-walkthrough-capability-result.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "repository-walkthrough-harness",
+  "x-status": "scaffold"
+}

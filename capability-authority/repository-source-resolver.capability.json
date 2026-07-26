@@ -1,0 +1,30 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "repository-source-resolver",
+  "title": "Repository Source Resolver",
+  "outcome": "Produce one immutable, authorized repository source.",
+  "owns": [
+    "repository reference",
+    "repository provider",
+    "repository identity",
+    "revision",
+    "branch",
+    "tag",
+    "commit",
+    "presentation entrypoint",
+    "authorization",
+    "source disposition"
+  ],
+  "mustNotOwn": [
+    "scene",
+    "narration",
+    "scroll",
+    "browser",
+    "recording",
+    "frame",
+    "video"
+  ],
+  "publicContract": "capabilities/repository-source-resolver/contracts/resolved-repository-source.schema.v1.json",
+  "dependencies": [],
+  "status": "scaffold"
+}

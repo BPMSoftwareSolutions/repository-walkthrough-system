@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "projectionId": "project-semantic-presentation-anchor",
+  "authorityCatalog": "../projections/projections.sej.v1.json",
+  "status": "implemented-first-slice"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "request.schema.v1.json",
+  "title": "Walkthrough Scene Observer Request",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "request.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "walkthrough-scene-observer",
+  "x-status": "scaffold"
+}

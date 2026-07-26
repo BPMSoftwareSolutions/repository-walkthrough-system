@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-presentation-inspection-context.schema.v1.json",
+  "title": "Repository Presentation Inspection Context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "request"],
+  "properties": {
+    "contractType": { "const": "repository-presentation-inspection-context.v1" },
+    "request": { "$ref": "repository-inspection-request.schema.v1.json" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

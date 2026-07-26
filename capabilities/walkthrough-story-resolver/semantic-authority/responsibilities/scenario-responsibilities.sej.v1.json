@@ -1,0 +1,42 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "walkthrough-story-resolver",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "resolve-audience-profile",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-learning-objective",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "select-presentation-assets",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-story-beats",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "order-story-beats",
+      "sequence": 5,
+      "kind": "execution-model"
+    },
+    {
+      "responsibilityId": "resolve-presentation-emphasis",
+      "sequence": 6,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-walkthrough-story",
+      "sequence": 7,
+      "kind": "projection"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "semanticType": "port-catalog.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "entries": [],
+  "declaration": "No external ports are required; the first slice projects immutable published JSON contracts."
+}

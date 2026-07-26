@@ -1,0 +1,72 @@
+{
+  "semanticType": "repository-presentation-inspection-profile.v1",
+  "profileId": "repository-overview.v1",
+  "status": "implemented-first-slice",
+  "supportedArtifactKinds": [
+    "readme-document",
+    "markdown-document",
+    "gherkin-feature",
+    "semantic-authority",
+    "json-contract",
+    "json-schema",
+    "source-file"
+  ],
+  "ignoredPathSegments": [".git", "node_modules", "dist", "coverage"],
+  "maximumArtifactSize": 1048576,
+  "maximumUnitSize": 32768,
+  "hiddenFileDisposition": "unsupported-finding",
+  "symlinkDisposition": "unsupported-finding",
+  "binaryFileDisposition": "unsupported-finding",
+  "unsupportedArtifactDisposition": "preserve-with-finding",
+  "supportedSurfacesByArtifactKind": {
+    "readme-document": ["repository-browser", "markdown-renderer", "source-viewer"],
+    "markdown-document": ["repository-browser", "markdown-renderer", "source-viewer"],
+    "gherkin-feature": ["repository-browser", "source-viewer"],
+    "semantic-authority": ["repository-browser", "source-viewer"],
+    "json-contract": ["repository-browser", "source-viewer"],
+    "json-schema": ["repository-browser", "source-viewer"],
+    "source-file": ["repository-browser", "source-viewer"]
+  },
+  "canonicalOrdering": {
+    "groups": [
+      "repository-overview",
+      "purpose-and-intent",
+      "architecture",
+      "features-and-scenarios",
+      "semantic-authority",
+      "contracts-and-schemas",
+      "public-operations",
+      "execution-bodies",
+      "proof-and-receipts",
+      "supporting-documentation",
+      "supplemental-material"
+    ],
+    "withinGroup": [
+      "significance-rank",
+      "artifact-path",
+      "source-position",
+      "anchor-identity"
+    ],
+    "assetKindGroups": {
+      "document-section": "repository-overview",
+      "architecture-diagram": "architecture",
+      "feature-definition": "features-and-scenarios",
+      "scenario-definition": "features-and-scenarios",
+      "semantic-decision": "semantic-authority",
+      "semantic-projection": "semantic-authority",
+      "semantic-policy": "semantic-authority",
+      "contract-definition": "contracts-and-schemas",
+      "schema-definition": "contracts-and-schemas",
+      "public-operation": "public-operations",
+      "execution-body": "execution-bodies",
+      "code-example": "supporting-documentation"
+    },
+    "significanceRanks": {
+      "foundational": 1,
+      "primary": 2,
+      "supporting": 3,
+      "supplemental": 4,
+      "incidental": 5
+    }
+  }
+}

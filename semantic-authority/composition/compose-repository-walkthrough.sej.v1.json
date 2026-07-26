@@ -1,0 +1,17 @@
+{
+  "semanticType": "capability-composition.v1",
+  "compositionId": "compose-repository-walkthrough",
+  "status": "scaffold",
+  "providers": [
+    "repository-source-resolver",
+    "repository-presentation-inspector",
+    "walkthrough-story-resolver",
+    "walkthrough-scene-planner",
+    "browser-presentation-resolver",
+    "browser-walkthrough-executor",
+    "screen-recording-controller",
+    "walkthrough-scene-observer",
+    "recording-proof-builder"
+  ],
+  "boundaryRule": "published-contracts-only"
+}

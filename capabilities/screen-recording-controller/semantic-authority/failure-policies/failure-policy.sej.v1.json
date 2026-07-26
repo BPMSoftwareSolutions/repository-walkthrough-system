@@ -1,0 +1,8 @@
+{
+  "semanticType": "failure-policy.v1",
+  "capabilityId": "screen-recording-controller",
+  "status": "scaffold",
+  "classifications": [],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

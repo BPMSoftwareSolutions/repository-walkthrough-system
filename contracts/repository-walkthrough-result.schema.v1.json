@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-walkthrough-result.schema.v1.json",
+  "title": "Repository Walkthrough Result",
+  "type": "object",
+  "required": ["walkthroughId", "capabilityResults", "disposition"],
+  "properties": {
+    "walkthroughId": { "type": "string", "minLength": 1 },
+    "capabilityResults": { "type": "array", "items": { "type": "object" } },
+    "disposition": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false,
+  "x-status": "scaffold"
+}

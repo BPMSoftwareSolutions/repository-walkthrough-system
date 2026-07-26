@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "result.schema.v1.json",
+  "title": "Repository Presentation Inspection Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "disposition", "inventory", "receipt", "findings"],
+  "properties": {
+    "contractType": { "const": "repository-presentation-inspection-result.v1" },
+    "disposition": {
+      "enum": [
+        "PRESENTATION_INVENTORY_PRODUCED",
+        "PRESENTATION_INVENTORY_PRODUCED_WITH_FINDINGS",
+        "NO_PRESENTABLE_MATERIAL",
+        "REJECTED_UNRESOLVED_REPOSITORY_SOURCE",
+        "REJECTED_UNSUPPORTED_INSPECTION_PROFILE",
+        "BLOCKED_REPOSITORY_UNREADABLE",
+        "BLOCKED_INSPECTION_SCOPE_VIOLATION",
+        "FAILED_UNCLASSIFIED"
+      ]
+    },
+    "inventory": {
+      "oneOf": [
+        { "$ref": "repository-presentation-inventory.schema.v1.json" },
+        { "type": "null" }
+      ]
+    },
+    "receipt": { "$ref": "repository-presentation-inspection-receipt.schema.v1.json" },
+    "findings": { "type": "array", "items": { "type": "object" } }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

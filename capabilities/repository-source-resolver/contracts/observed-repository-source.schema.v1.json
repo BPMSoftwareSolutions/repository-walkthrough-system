@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observed-repository-source.schema.v1.json",
+  "title": "Observed Repository Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "status"],
+  "properties": {
+    "contractType": { "const": "observed-repository-source.v1" },
+    "status": { "enum": ["observed", "not-found", "access-denied", "unreachable"] },
+    "providerStatus": { "type": ["integer", "null"] },
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["providerRepositoryId", "owner", "repositoryName", "canonicalSlug", "visibility", "defaultBranch"],
+      "properties": {
+        "providerRepositoryId": { "type": "string" },
+        "owner": { "type": "string" },
+        "repositoryName": { "type": "string" },
+        "canonicalSlug": { "type": "string" },
+        "visibility": { "const": "public" },
+        "defaultBranch": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "x-status": "implemented-first-slice"
+}

@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "browser-presentation-resolver",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-browser-presentation-resolver-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-browser-presentation-resolver"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-browser-presentation-resolver-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

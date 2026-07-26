@@ -1,0 +1,19 @@
+{
+  "$schema": "../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "browser-presentation-resolver",
+  "title": "Resolve browser presentation authority",
+  "purpose": "Transform an authorized walkthrough scene plan into an ordered platform-neutral browser presentation plan.",
+  "actor": "repository-walkthrough-harness",
+  "trigger": "an authorized walkthrough scene plan and presentation profile are submitted",
+  "desiredOutcome": "every scene has complete browser presentation authority without embedding browser-engine mechanics",
+  "constraints": [
+    "semantic scene targets remain stable across presentation surfaces",
+    "no CSS selector, XPath, DOM query, or browser SDK command is projected",
+    "every operation is ordered before execution",
+    "unsupported surfaces and targets fail closed",
+    "the resolved plan declares its proof requirements"
+  ],
+  "featureIds": [
+    "resolve-browser-presentation-authority"
+  ]
+}

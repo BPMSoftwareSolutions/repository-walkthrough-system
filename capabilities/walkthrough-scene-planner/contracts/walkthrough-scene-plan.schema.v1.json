@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "walkthrough-scene-plan.schema.v1.json",
+  "title": "Repository Walkthrough Scene Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "planId",
+    "storyId",
+    "repositoryId",
+    "scenes",
+    "coverage",
+    "disposition",
+    "planHash"
+  ],
+  "properties": {
+    "contractType": { "const": "walkthrough-scene-plan.v1" },
+    "planId": { "type": "string", "minLength": 1 },
+    "storyId": { "type": "string", "minLength": 1 },
+    "repositoryId": { "type": "string", "minLength": 1 },
+    "scenes": {
+      "type": "array",
+      "items": { "$ref": "walkthrough-scene.schema.v1.json" }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requiredStoryBeatCount",
+        "coveredStoryBeatCount",
+        "uncoveredStoryBeatIds"
+      ],
+      "properties": {
+        "requiredStoryBeatCount": { "type": "integer", "minimum": 0 },
+        "coveredStoryBeatCount": { "type": "integer", "minimum": 0 },
+        "uncoveredStoryBeatIds": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "disposition": {
+      "enum": ["SCENE_PLAN_RESOLVED", "SCENE_PLAN_REJECTED"]
+    },
+    "planHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

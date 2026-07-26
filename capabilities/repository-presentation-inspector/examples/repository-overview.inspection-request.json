@@ -1,0 +1,16 @@
+{
+  "$schema": "../contracts/repository-presentation-inspection-request.schema.v1.json",
+  "contractType": "repository-presentation-inspection-request.v1",
+  "requestId": "inspect-repository-presentation-01",
+  "source": {
+    "contractType": "resolved-local-repository-source.v1",
+    "repositoryId": "repository-presentation-inspector",
+    "provider": "local-workspace",
+    "revision": "revision-01",
+    "authorizedRoot": "C:/workspace/repository-presentation-inspector",
+    "sourceReceiptHash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "profileId": "repository-overview.v1",
+  "inventoryContractVersion": "repository-presentation-inventory.v1",
+  "inspectionTimestamp": "2026-07-26T12:00:00.000Z"
+}

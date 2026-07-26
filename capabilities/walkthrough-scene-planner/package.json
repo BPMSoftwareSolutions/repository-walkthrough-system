@@ -1,0 +1,12 @@
+{
+  "name": "@repository-walkthrough/walkthrough-scene-planner",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Produce an ordered scene model from a resolved story.",
+  "type": "module",
+  "exports": "./dist/application/plans-repository-walkthrough-scenes.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/proof/walkthrough-scene-planner.test.js"
+  }
+}

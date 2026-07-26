@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "repository-presentation-inspector",
+  "title": "Repository Presentation Inspector",
+  "purpose": "Produce an inventory of presentable repository material.",
+  "actor": "authorized-caller",
+  "trigger": "an immutable repository source is submitted for inspection",
+  "desiredOutcome": "presentable repository assets are inventoried without deciding their story",
+  "constraints": [
+    "canonical meaning is limited to presentable repository material",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions",
+    "effects occur only through declared ports and produce proof receipts"
+  ],
+  "featureIds": [
+    "inventory-presentable-repository-material"
+  ],
+  "status": "scaffold"
+}

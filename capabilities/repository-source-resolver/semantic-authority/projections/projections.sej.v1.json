@@ -1,0 +1,25 @@
+{
+  "semanticType": "projection-catalog.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "projectionId": "project-resolved-repository-source",
+      "authority": "../project-resolved-repository-source/projects-resolved-repository-source.sej.v1.json"
+    },
+    {
+      "projectionId": "project-repository-source-resolution-receipt",
+      "authority": "../project-resolved-repository-source/projects-resolved-repository-source.sej.v1.json"
+    },
+    {
+      "projectionId": "project-repository-source-resolution-result",
+      "fields": {
+        "contractType": { "value": "repository-source-resolution-result.v1" },
+        "disposition": "$.disposition",
+        "source": "$.source",
+        "receipt": "$.receipt",
+        "findings": "$.findings"
+      }
+    }
+  ]
+}

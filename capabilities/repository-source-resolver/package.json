@@ -1,0 +1,12 @@
+{
+  "name": "@repository-walkthrough/repository-source-resolver",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Produce one immutable, authorized repository source.",
+  "type": "module",
+  "exports": "./dist/application/resolves-authorized-repository-source.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/proof/repository-source-resolver.test.js"
+  }
+}

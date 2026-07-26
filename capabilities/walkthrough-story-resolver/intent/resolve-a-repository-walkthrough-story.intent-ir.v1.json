@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "walkthrough-story-resolver",
+  "title": "Walkthrough Story Resolver",
+  "purpose": "Produce the semantic story the walkthrough intends to communicate.",
+  "actor": "authorized-caller",
+  "trigger": "a presentation inventory and learning intent are submitted",
+  "desiredOutcome": "an audience-appropriate ordered walkthrough story is resolved",
+  "constraints": [
+    "canonical meaning is limited to educational narrative",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions",
+    "effects occur only through declared ports and produce proof receipts"
+  ],
+  "featureIds": [
+    "resolve-a-repository-walkthrough-story"
+  ],
+  "status": "scaffold"
+}

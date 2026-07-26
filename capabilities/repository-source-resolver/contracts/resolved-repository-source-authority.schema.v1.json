@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-repository-source-authority.schema.v1.json",
+  "title": "Resolved Repository Source Authority",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["authorityType", "disposition", "request", "recognizedReference", "operations"],
+  "properties": {
+    "authorityType": { "const": "resolved-repository-source-resolution-authority.v1" },
+    "disposition": { "const": "authorized" },
+    "request": { "$ref": "repository-source-request.schema.v1.json" },
+    "recognizedReference": { "$ref": "recognized-repository-reference.schema.v1.json" },
+    "operations": {
+      "type": "array",
+      "minItems": 8,
+      "items": { "type": "string" }
+    }
+  },
+  "x-status": "implemented-first-slice"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-walkthrough-receipt.schema.v1.json",
+  "title": "Repository Walkthrough Receipt",
+  "type": "object",
+  "required": ["receiptType", "walkthroughId", "capabilityReceipts", "proof", "disposition"],
+  "properties": {
+    "receiptType": { "const": "repository-walkthrough-receipt.v1" },
+    "walkthroughId": { "type": "string", "minLength": 1 },
+    "capabilityReceipts": { "type": "array", "items": { "type": "object" } },
+    "proof": { "type": "object" },
+    "disposition": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false,
+  "x-status": "scaffold"
+}

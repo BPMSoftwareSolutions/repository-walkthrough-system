@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observed-readme-node.schema.v1.json",
+  "title": "Observed README Node",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "observed-readme-node.v1" }
+  },
+  "status": "scaffold"
+}

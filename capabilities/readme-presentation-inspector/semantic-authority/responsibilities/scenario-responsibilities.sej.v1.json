@@ -1,0 +1,37 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "classify-repository-artifact",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "classify-document-section",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-presentability",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-presentation-significance",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "iterate-repository-artifacts",
+      "sequence": 5,
+      "kind": "execution-model"
+    },
+    {
+      "responsibilityId": "project-repository-presentation-inventory",
+      "sequence": 6,
+      "kind": "projection"
+    }
+  ]
+}

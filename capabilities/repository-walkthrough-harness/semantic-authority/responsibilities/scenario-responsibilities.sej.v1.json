@@ -1,0 +1,27 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "repository-walkthrough-harness",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "resolve-walkthrough-capability-composition",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-walkthrough-execution-order",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-blocking-capability-disposition",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-repository-walkthrough-outcome",
+      "sequence": 4,
+      "kind": "projection"
+    }
+  ]
+}

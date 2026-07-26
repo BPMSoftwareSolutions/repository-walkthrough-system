@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "result.schema.v1.json",
+  "title": "Repository Walkthrough Scene Planning Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "disposition", "plan", "receipt", "findings"],
+  "properties": {
+    "contractType": {
+      "const": "repository-walkthrough-scene-planning-result.v1"
+    },
+    "disposition": {
+      "enum": ["SCENE_PLAN_RESOLVED", "SCENE_PLAN_REJECTED"]
+    },
+    "plan": { "$ref": "walkthrough-scene-plan.schema.v1.json" },
+    "receipt": { "$ref": "scene-planning-receipt.schema.v1.json" },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "scene-planning-receipt.schema.v1.json#/$defs/finding" }
+    }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "walkthrough-scene.schema.v1.json",
+  "type": "object",
+  "required": ["sceneId", "sequence", "purpose", "visualSource", "visualSubject", "presentationIntent"],
+  "properties": {
+    "sceneId": {"type": "string", "minLength": 1},
+    "sequence": {"type": "integer", "minimum": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "visualSource": {
+      "type": "object",
+      "required": ["assetId", "assetKind"],
+      "properties": {
+        "assetId": {"type": "string", "minLength": 1},
+        "assetKind": {"enum": ["repository-document", "repository-file", "repository-directory", "documentation-page"]},
+        "path": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "visualSubject": {
+      "type": "object",
+      "required": ["kind", "semanticAnchor"],
+      "properties": {
+        "kind": {"enum": ["document-fragment", "source-fragment", "directory-entry", "whole-asset"]},
+        "semanticAnchor": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "presentationIntent": {"enum": ["establish", "focus", "compare", "conclude"]},
+    "transitionIn": {"enum": ["open-source", "retain-context", "return-to-root"]},
+    "transitionOut": {"enum": ["retain-context", "close-source", "advance"]}
+  },
+  "additionalProperties": false
+}

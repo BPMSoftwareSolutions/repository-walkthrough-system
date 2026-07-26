@@ -1,0 +1,128 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "decisionId": "resolve-repository-walkthrough-scene-kind",
+      "inputs": [
+        "storyBeat.purpose",
+        "asset.kind"
+      ],
+      "rules": [
+        {
+          "when": { "storyBeat.purpose": "introduce-capability" },
+          "then": {
+            "scenePurpose": "introduce-capability",
+            "visualSubjectKind": "document-section",
+            "presentationIntent": "establish"
+          }
+        },
+        {
+          "when": { "storyBeat.purpose": "explain-architecture" },
+          "then": {
+            "scenePurpose": "present-architecture",
+            "visualSubjectKind": "diagram",
+            "presentationIntent": "trace"
+          }
+        },
+        {
+          "when": { "storyBeat.purpose": "explain-semantic-contract" },
+          "then": {
+            "scenePurpose": "explain-semantic-authority",
+            "visualSubjectKind": "semantic-contract",
+            "presentationIntent": "focus"
+          }
+        },
+        {
+          "when": { "storyBeat.purpose": "show-collapsed-execution-body" },
+          "then": {
+            "scenePurpose": "show-execution-body",
+            "visualSubjectKind": "source-fragment",
+            "presentationIntent": "demonstrate"
+          }
+        },
+        {
+          "when": { "storyBeat.purpose": "show-execution-proof" },
+          "then": {
+            "scenePurpose": "show-proof",
+            "visualSubjectKind": "execution-receipt",
+            "presentationIntent": "verify"
+          }
+        }
+      ],
+      "emptyDisposition": "UNSUPPORTED_STORY_BEAT"
+    },
+    {
+      "decisionId": "select-presentation-asset-for-story-beat",
+      "inputs": [
+        "storyBeat.requiredConcepts",
+        "asset.kind",
+        "asset.title",
+        "asset.location.semanticAnchor",
+        "asset.location.repositoryRelativePath",
+        "asset.presentation.presentability",
+        "asset.presentation.significance"
+      ],
+      "selection": {
+        "collection": "$.presentationInventory.assets",
+        "eligiblePresentability": ["recommended", "available", "supporting"],
+        "conceptSources": [
+          "asset.kind",
+          "asset.title",
+          "asset.location.semanticAnchor",
+          "asset.location.repositoryRelativePath"
+        ],
+        "conceptMatch": "every-required-concept-contained-case-insensitive",
+        "significanceOrder": [
+          "foundational",
+          "primary",
+          "supporting",
+          "supplemental",
+          "incidental"
+        ],
+        "tieBreak": "inventory-order",
+        "select": "first",
+        "emptyDisposition": "STORY_BEAT_HAS_NO_PRESENTATION_ASSET"
+      }
+    },
+    {
+      "decisionId": "resolve-scene-transition",
+      "inputs": [
+        "previousScene.visualSource.assetId",
+        "currentScene.visualSource.assetId",
+        "previousScene.continuityGroup",
+        "currentScene.continuityGroup"
+      ],
+      "rules": [
+        {
+          "when": { "sourceIdentity": "same" },
+          "then": "retain-source-change-focus"
+        },
+        {
+          "when": { "continuityGroup": "same" },
+          "then": "preserve-context"
+        },
+        {
+          "when": { "sceneBoundary": "terminal" },
+          "then": "preserve-context"
+        },
+        {
+          "when": { "*": true },
+          "then": "establish-new-source"
+        }
+      ]
+    },
+    {
+      "decisionId": "evaluate-required-story-beat-coverage",
+      "inputs": [
+        "requiredStoryBeatIds",
+        "resolvedSceneStoryBeatIds"
+      ],
+      "completeWhen": "every-required-story-beat-id-has-a-resolved-scene",
+      "completeDisposition": "SCENE_PLAN_RESOLVED",
+      "incompleteDisposition": "SCENE_PLAN_REJECTED",
+      "failureCode": "REQUIRED_STORY_BEAT_NOT_COVERED"
+    }
+  ]
+}

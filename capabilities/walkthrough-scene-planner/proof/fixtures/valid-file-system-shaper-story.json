@@ -1,0 +1,48 @@
+{
+  "contractType": "walkthrough-story.v1",
+  "storyId": "explain-file-system-shaper",
+  "repositoryId": "file-system-shaper",
+  "storyHash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "beats": [
+    {
+      "storyBeatId": "introduce-capability",
+      "sequence": 1,
+      "required": true,
+      "purpose": "introduce-capability",
+      "requiredConcepts": ["purpose"],
+      "continuityGroup": "capability-introduction"
+    },
+    {
+      "storyBeatId": "explain-architecture",
+      "sequence": 2,
+      "required": true,
+      "purpose": "explain-architecture",
+      "requiredConcepts": ["architecture"],
+      "continuityGroup": "architecture"
+    },
+    {
+      "storyBeatId": "explain-semantic-contract",
+      "sequence": 3,
+      "required": true,
+      "purpose": "explain-semantic-contract",
+      "requiredConcepts": ["placements"],
+      "continuityGroup": "semantic-authority"
+    },
+    {
+      "storyBeatId": "show-collapsed-execution-body",
+      "sequence": 4,
+      "required": true,
+      "purpose": "show-collapsed-execution-body",
+      "requiredConcepts": ["shapes file system"],
+      "continuityGroup": "execution"
+    },
+    {
+      "storyBeatId": "show-execution-proof",
+      "sequence": 5,
+      "required": true,
+      "purpose": "show-execution-proof",
+      "requiredConcepts": ["verified operations"],
+      "continuityGroup": "proof"
+    }
+  ]
+}

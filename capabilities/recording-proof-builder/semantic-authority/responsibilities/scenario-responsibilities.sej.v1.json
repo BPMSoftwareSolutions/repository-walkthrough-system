@@ -1,0 +1,37 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "recording-proof-builder",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "resolve-recording-proof-requirements",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-scene-evidence-coverage",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-recording-artifact-integrity",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "evaluate-walkthrough-conformance",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "classify-recording-proof-disposition",
+      "sequence": 5,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-recording-proof",
+      "sequence": 6,
+      "kind": "projection"
+    }
+  ]
+}

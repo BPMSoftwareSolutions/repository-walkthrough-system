@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "request.schema.v1.json",
+  "title": "Repository Presentation Inspector Request",
+  "type": "object",
+  "$ref": "repository-inspection-request.schema.v1.json",
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

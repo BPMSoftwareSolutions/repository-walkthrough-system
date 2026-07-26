@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "browser-scene-execution-plan.schema.v1.json",
+  "title": "Browser Presentation Resolver Browser Scene Execution Plan",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "browser-scene-execution-plan.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "browser-presentation-resolver",
+  "x-status": "scaffold"
+}

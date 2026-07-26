@@ -1,0 +1,52 @@
+{
+  "projectionId": "project-browser-presentation-operations",
+  "from": "walkthrough-scene",
+  "to": "browser-presentation-operation-collection",
+  "items": [
+    {
+      "operationId": {"concat": ["$.sceneId", ":navigate"]},
+      "sequence": 1,
+      "kind": "navigate-to-presentation-asset",
+      "targetReference": {
+        "assetId": "$.visualSource.assetId",
+        "semanticAnchor": "$.visualSubject.semanticAnchor",
+        "targetKind": "$.visualSubject.kind"
+      },
+      "policyReference": "navigate-without-executor-specific-locator"
+    },
+    {
+      "operationId": {"concat": ["$.sceneId", ":bring-into-view"]},
+      "sequence": 2,
+      "kind": "bring-semantic-target-into-view",
+      "targetReference": {
+        "assetId": "$.visualSource.assetId",
+        "semanticAnchor": "$.visualSubject.semanticAnchor",
+        "targetKind": "$.visualSubject.kind"
+      },
+      "policyReference": "preserve-source-order-and-readable-context"
+    },
+    {
+      "operationId": {"concat": ["$.sceneId", ":focus"]},
+      "sequence": 3,
+      "kind": "focus-semantic-target",
+      "targetReference": {
+        "assetId": "$.visualSource.assetId",
+        "semanticAnchor": "$.visualSubject.semanticAnchor",
+        "targetKind": "$.visualSubject.kind"
+      },
+      "policyReference": "focus-without-obscuring-target-context"
+    },
+    {
+      "operationId": {"concat": ["$.sceneId", ":settle"]},
+      "sequence": 4,
+      "kind": "await-presentation-settlement",
+      "targetReference": {
+        "assetId": "$.visualSource.assetId",
+        "semanticAnchor": "$.visualSubject.semanticAnchor",
+        "targetKind": "$.visualSubject.kind"
+      },
+      "settlementCondition": "target-stable-and-visible",
+      "policyReference": "settle-before-observation-or-recording-advance"
+    }
+  ]
+}

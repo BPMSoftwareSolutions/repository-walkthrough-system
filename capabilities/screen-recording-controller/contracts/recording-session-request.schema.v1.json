@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "recording-session-request.schema.v1.json",
+  "title": "Screen Recording Controller Recording Session Request",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "recording-session-request.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "screen-recording-controller",
+  "x-status": "scaffold"
+}

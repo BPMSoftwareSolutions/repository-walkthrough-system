@@ -1,0 +1,49 @@
+{
+  "semanticType": "port-catalog.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "portId": "observes-github-repository",
+      "inputContract": "recognized-repository-reference.v1",
+      "outputContract": "observed-repository-source.v1",
+      "effect": "read-remote-repository-metadata"
+    },
+    {
+      "portId": "observes-github-default-branch",
+      "inputContract": "observed-repository-source.v1",
+      "outputContract": "observed-remote-revision.v1",
+      "effect": "read-remote-repository-metadata"
+    },
+    {
+      "portId": "observes-github-branch",
+      "inputContract": "observe-remote-revision-request.v1",
+      "outputContract": "observed-remote-revision.v1",
+      "effect": "read-remote-repository-metadata"
+    },
+    {
+      "portId": "observes-github-tag",
+      "inputContract": "observe-remote-revision-request.v1",
+      "outputContract": "observed-remote-revision.v1",
+      "effect": "read-remote-repository-metadata"
+    },
+    {
+      "portId": "observes-github-commit",
+      "inputContract": "observe-remote-revision-request.v1",
+      "outputContract": "observed-remote-revision.v1",
+      "effect": "read-remote-repository-metadata"
+    },
+    {
+      "portId": "observes-github-entrypoint",
+      "inputContract": "observe-repository-entrypoint-request.v1",
+      "outputContract": "observed-repository-entrypoint.v1",
+      "effect": "read-remote-repository-metadata"
+    },
+    {
+      "portId": "calculates-canonical-content-hash",
+      "inputContract": "calculate-canonical-hash-request.v1",
+      "outputContract": "canonical-hash-result.v1",
+      "effect": "calculate"
+    }
+  ]
+}

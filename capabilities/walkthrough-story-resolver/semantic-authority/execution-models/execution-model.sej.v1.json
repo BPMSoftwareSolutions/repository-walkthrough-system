@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "walkthrough-story-resolver",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-walkthrough-story-resolver-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-walkthrough-story-resolver"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-walkthrough-story-resolver-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

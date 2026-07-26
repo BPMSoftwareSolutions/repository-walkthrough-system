@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "recording-artifact.schema.v1.json",
+  "title": "Screen Recording Controller Recording Artifact",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "recording-artifact.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "screen-recording-controller",
+  "x-status": "scaffold"
+}

@@ -1,0 +1,49 @@
+{
+  "semanticType": "projection-catalog.v1",
+  "responsibilityId": "project-resolved-repository-source",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "projectionId": "project-resolved-repository-source",
+      "from": "executed-repository-source-resolution",
+      "to": "resolved-repository-source.v1",
+      "fields": {
+        "contractType": { "value": "resolved-repository-source.v1" },
+        "sourceId": { "template": "github:{repository.canonicalSlug}@{resolvedRevision.commit}" },
+        "submittedReference": "$.request.reference",
+        "provider.providerId": "$.recognizedReference.providerId",
+        "provider.host": "$.recognizedReference.host",
+        "provider.referenceDialect": "$.recognizedReference.referenceDialect",
+        "repository.providerRepositoryId": "$.repository.providerRepositoryId",
+        "repository.owner": "$.repository.owner",
+        "repository.repositoryName": "$.repository.repositoryName",
+        "repository.canonicalSlug": "$.repository.canonicalSlug",
+        "repository.visibility": "$.repository.visibility",
+        "requestedRevision.value": "$.requestedRevision.value",
+        "requestedRevision.kindHint": "$.requestedRevision.kindHint",
+        "requestedRevision.disposition": "$.requestedRevision.disposition",
+        "resolvedRevision.kind": "$.resolvedRevision.kind",
+        "resolvedRevision.name": "$.resolvedRevision.name",
+        "resolvedRevision.commit": "$.resolvedRevision.commit",
+        "sourceLocation.kind": { "value": "remote" },
+        "sourceLocation.canonicalReference": { "template": "github:{repository.canonicalSlug}" },
+        "sourceLocation.browseReference": { "template": "https://github.com/{repository.canonicalSlug}/tree/{resolvedRevision.commit}" },
+        "sourceLocation.localRoot": { "value": null },
+        "access.disposition": { "value": "authorized-public" },
+        "access.authorizationReference": { "value": null },
+        "presentationEntrypoint.kind": "$.presentationEntrypoint.kind",
+        "presentationEntrypoint.path": "$.presentationEntrypoint.path",
+        "authority.requestHash": "$.hashes.requestHash",
+        "authority.observationHash": "$.hashes.observationHash",
+        "authority.authorityHash": "$.hashes.authorityHash"
+      }
+    },
+    {
+      "projectionId": "project-repository-source-resolution-receipt",
+      "from": "executed-repository-source-resolution",
+      "to": "repository-source-resolution-receipt.v1",
+      "credentialFieldPolicy": "exclude-all-credential-material",
+      "disposition": "REPOSITORY_SOURCE_RESOLVED"
+    }
+  ]
+}

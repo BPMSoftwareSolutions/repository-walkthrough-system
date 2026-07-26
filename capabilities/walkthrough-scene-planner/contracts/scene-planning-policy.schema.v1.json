@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scene-planning-policy.schema.v1.json",
+  "title": "Scene Planning Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policyId",
+    "missingPresentationAsset",
+    "unsupportedStoryBeat",
+    "incompleteCoverage"
+  ],
+  "properties": {
+    "policyId": { "const": "complete-required-story-coverage.v1" },
+    "missingPresentationAsset": { "const": "reject" },
+    "unsupportedStoryBeat": { "const": "reject" },
+    "incompleteCoverage": { "const": "reject" }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

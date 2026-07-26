@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observed-presentation-unit.schema.v1.json",
+  "title": "Observed Presentation Unit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "observedKind",
+    "title",
+    "semanticIdentity",
+    "startLine",
+    "endLine",
+    "contentLength",
+    "sourceIdentity"
+  ],
+  "properties": {
+    "contractType": { "const": "observed-presentation-unit.v1" },
+    "observedKind": {
+      "enum": [
+        "markdown-heading",
+        "markdown-code-block",
+        "markdown-ascii-diagram",
+        "gherkin-feature",
+        "gherkin-scenario",
+        "semantic-root",
+        "semantic-decision",
+        "semantic-projection",
+        "contract-root",
+        "schema-root",
+        "typescript-exported-operation",
+        "typescript-collapsed-body"
+      ]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "semanticIdentity": { "type": "string", "minLength": 1 },
+    "startLine": { "type": "integer", "minimum": 1 },
+    "endLine": { "type": "integer", "minimum": 1 },
+    "contentLength": { "type": "integer", "minimum": 0 },
+    "sourceIdentity": { "type": "object" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

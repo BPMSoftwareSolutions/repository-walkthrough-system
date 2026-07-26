@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-repository-source.schema.v1.json",
+  "title": "Resolved Repository Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "sourceId", "submittedReference", "provider", "repository", "requestedRevision", "resolvedRevision", "sourceLocation", "access", "presentationEntrypoint", "authority"],
+  "properties": {
+    "contractType": { "const": "resolved-repository-source.v1" },
+    "sourceId": { "type": "string", "pattern": "^github:[^/]+/[^@]+@[0-9a-f]{40}$" },
+    "submittedReference": { "type": "string", "minLength": 1 },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["providerId", "host", "referenceDialect"],
+      "properties": {
+        "providerId": { "const": "github" },
+        "host": { "const": "github.com" },
+        "referenceDialect": { "const": "github-https" }
+      }
+    },
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["providerRepositoryId", "owner", "repositoryName", "canonicalSlug", "visibility"],
+      "properties": {
+        "providerRepositoryId": { "type": "string" },
+        "owner": { "type": "string" },
+        "repositoryName": { "type": "string" },
+        "canonicalSlug": { "type": "string" },
+        "visibility": { "const": "public" }
+      }
+    },
+    "requestedRevision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "kindHint", "disposition"],
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "kindHint": { "type": ["string", "null"], "enum": ["branch", "tag", "commit", null] },
+        "disposition": { "enum": ["explicit", "provider-default"] }
+      }
+    },
+    "resolvedRevision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "commit"],
+      "properties": {
+        "kind": { "enum": ["branch", "tag", "commit"] },
+        "name": { "type": ["string", "null"] },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" }
+      }
+    },
+    "sourceLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "canonicalReference", "browseReference", "localRoot"],
+      "properties": {
+        "kind": { "const": "remote" },
+        "canonicalReference": { "type": "string" },
+        "browseReference": { "type": "string", "format": "uri" },
+        "localRoot": { "type": "null" }
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disposition", "authorizationReference"],
+      "properties": {
+        "disposition": { "const": "authorized-public" },
+        "authorizationReference": { "type": "null" }
+      }
+    },
+    "presentationEntrypoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "path"],
+      "properties": {
+        "kind": { "enum": ["repository-root", "readme", "repository-path"] },
+        "path": { "type": "string" }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requestHash", "observationHash", "authorityHash"],
+      "properties": {
+        "requestHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "observationHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "authorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      }
+    }
+  },
+  "x-capability-id": "repository-source-resolver",
+  "x-status": "implemented-first-slice"
+}

@@ -1,0 +1,19 @@
+{
+  "semanticType": "effect-catalog.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "effectId": "observe-repository-artifact-inventory",
+      "kind": "read-only-file-system-observation",
+      "authorizedBy": "resolved-repository-presentation-inspection.v1",
+      "mustProduce": "artifact-inventory-observation"
+    },
+    {
+      "effectId": "observe-repository-artifact-content",
+      "kind": "read-only-file-system-observation",
+      "authorizedBy": "resolved-repository-presentation-inspection.v1",
+      "mustProduce": "artifact-content-observation"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "semanticType": "effect-catalog.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "entries": [],
+  "declaration": "The first slice has no external effects."
+}

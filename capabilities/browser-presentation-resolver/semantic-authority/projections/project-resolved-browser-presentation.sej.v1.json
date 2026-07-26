@@ -1,0 +1,17 @@
+{
+  "projectionId": "project-resolved-browser-presentation",
+  "from": "executed-browser-presentation-resolution",
+  "to": "resolved-browser-presentation.v1",
+  "fields": {
+    "planId": {"concat": ["browser-plan:", "$.request.requestId"]},
+    "requestId": "$.request.requestId",
+    "walkthroughId": "$.request.walkthroughId",
+    "surface.surfaceId": "$.request.surface.surfaceId",
+    "surface.kind": "$.request.surface.kind",
+    "surface.resolverProfileId": "$.resolvedSurfaceProfileId",
+    "viewport": "$.resolvedViewport",
+    "scenes": "$.resolvedScenes",
+    "disposition": "$.disposition",
+    "findings": "$.findings"
+  }
+}

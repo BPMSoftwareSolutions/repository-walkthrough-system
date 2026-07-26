@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "learning-objective.schema.v1.json",
+  "title": "Walkthrough Story Resolver Learning Objective",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "learning-objective.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "walkthrough-story-resolver",
+  "x-status": "scaffold"
+}

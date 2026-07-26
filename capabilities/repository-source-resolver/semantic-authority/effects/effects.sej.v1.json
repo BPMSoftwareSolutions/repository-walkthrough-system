@@ -1,0 +1,19 @@
+{
+  "semanticType": "effect-catalog.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "effectId": "read-remote-repository-metadata",
+      "kind": "read-only",
+      "mutatesRepository": false,
+      "recordsCredentialMaterial": false
+    },
+    {
+      "effectId": "calculate",
+      "kind": "pure",
+      "mutatesRepository": false,
+      "recordsCredentialMaterial": false
+    }
+  ]
+}

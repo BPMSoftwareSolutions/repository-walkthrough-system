@@ -1,0 +1,8 @@
+{
+  "semanticType": "failure-policy.v1",
+  "responsibilityId": "readme-presentation-inspection-failure-policy",
+  "status": "scaffold",
+  "classifications": [],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

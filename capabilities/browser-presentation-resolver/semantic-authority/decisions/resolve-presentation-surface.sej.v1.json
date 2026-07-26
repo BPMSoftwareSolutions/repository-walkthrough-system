@@ -1,0 +1,10 @@
+{
+  "decisionId": "resolve-presentation-surface",
+  "inputs": ["surface.kind"],
+  "rules": [
+    {"when": {"surface.kind": "repository-web"}, "then": "repository-web-surface-profile-v1"},
+    {"when": {"surface.kind": "documentation-web"}, "then": "documentation-web-surface-profile-v1"},
+    {"when": {"surface.kind": "custom-web-viewer"}, "then": "custom-web-viewer-surface-profile-v1"},
+    {"when": {"*": true}, "then": "reject-unsupported-presentation-surface"}
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "walkthrough-scene-planner",
+  "status": "implemented-first-slice",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "validate-scene-planning-request",
+      "authorityId": "scene-planning-request.schema.v1.json"
+    },
+    {
+      "sequence": 2,
+      "operation": "plan-required-story-beat-scenes",
+      "authorityId": "plan-scenes-for-required-story-beats"
+    },
+    {
+      "sequence": 3,
+      "operation": "resolve-scene-transitions",
+      "authorityId": "resolve-transitions-between-scenes"
+    },
+    {
+      "sequence": 4,
+      "operation": "evaluate-scene-coverage",
+      "authorityId": "evaluate-required-story-beat-coverage"
+    },
+    {
+      "sequence": 5,
+      "operation": "project-scene-plan",
+      "authorityId": "project-repository-walkthrough-scene-plan"
+    },
+    {
+      "sequence": 6,
+      "operation": "produce-scene-planning-proof",
+      "authorityId": "repository-walkthrough-scene-planning-proof.v1"
+    }
+  ],
+  "iterationAuthority": [
+    {
+      "iterationId": "plan-scenes-for-required-story-beats",
+      "collection": "$.request.story.beats",
+      "filter": {
+        "path": "$.required",
+        "equals": true
+      },
+      "order": {
+        "field": "sequence",
+        "direction": "ascending",
+        "tieBreak": {
+          "field": "storyBeatId",
+          "direction": "ascending"
+        }
+      },
+      "forEach": {
+        "invoke": "resolve-scene-for-story-beat"
+      },
+      "collect": {
+        "projection": "project-repository-walkthrough-scene"
+      }
+    },
+    {
+      "iterationId": "resolve-transitions-between-scenes",
+      "collection": "$.resolvedScenes",
+      "adjacency": "previous-and-current",
+      "invoke": "resolve-scene-transition"
+    }
+  ],
+  "stateTransitions": [
+    {
+      "from": "SCENE_PLANNING_AUTHORIZED",
+      "when": "all-required-story-beats-covered",
+      "to": "SCENE_PLAN_RESOLVED"
+    },
+    {
+      "from": "SCENE_PLANNING_AUTHORIZED",
+      "when": "blocking-scene-planning-finding",
+      "to": "SCENE_PLAN_REJECTED"
+    }
+  ],
+  "idempotency": {
+    "identity": [
+      "request.story.storyHash",
+      "request.presentationInventory.inventoryHash",
+      "request.planningPolicy.policyId"
+    ],
+    "disposition": "same-input-produces-equivalent-authority-plan-and-receipt"
+  }
+}

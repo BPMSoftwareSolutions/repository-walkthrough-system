@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "screen-recording-controller",
+  "title": "Screen Recording Controller",
+  "purpose": "Capture an authorized visual session as an inspectable recording artifact.",
+  "actor": "authorized-caller",
+  "trigger": "an authorized visual session and recording profile are submitted",
+  "desiredOutcome": "the declared visual source is captured into a readable recording artifact",
+  "constraints": [
+    "canonical meaning is limited to captured-media testimony",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions",
+    "effects occur only through declared ports and produce proof receipts"
+  ],
+  "featureIds": [
+    "capture-an-authorized-visual-session"
+  ],
+  "status": "scaffold"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "walkthrough-story-resolution-receipt.schema.v1.json",
+  "title": "Walkthrough Story Resolver Walkthrough Story Resolution Receipt",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "walkthrough-story-resolution-receipt.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "walkthrough-story-resolver",
+  "x-status": "scaffold"
+}

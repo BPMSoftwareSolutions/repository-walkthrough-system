@@ -1,0 +1,71 @@
+{
+  "planId": "browser-plan:request-001",
+  "requestId": "request-001",
+  "walkthroughId": "present-file-system-shaper",
+  "surface": {
+    "surfaceId": "github-repository",
+    "kind": "repository-web",
+    "resolverProfileId": "repository-web-surface-profile-v1"
+  },
+  "viewport": {
+    "profileId": "desktop-wide",
+    "width": 1920,
+    "height": 1080,
+    "deviceScaleFactor": 1
+  },
+  "scenes": [
+    {
+      "sceneId": "show-semantic-contract",
+      "sequence": 1,
+      "operations": [
+        {
+          "operationId": "show-semantic-contract:navigate",
+          "sequence": 1,
+          "kind": "navigate-to-presentation-asset",
+          "targetReference": {
+            "assetId": "file-system-shape-contract",
+            "semanticAnchor": "placements",
+            "targetKind": "document-fragment"
+          },
+          "policyReference": "navigate-without-executor-specific-locator"
+        },
+        {
+          "operationId": "show-semantic-contract:bring-into-view",
+          "sequence": 2,
+          "kind": "bring-semantic-target-into-view",
+          "targetReference": {
+            "assetId": "file-system-shape-contract",
+            "semanticAnchor": "placements",
+            "targetKind": "document-fragment"
+          },
+          "policyReference": "preserve-source-order-and-readable-context"
+        },
+        {
+          "operationId": "show-semantic-contract:focus",
+          "sequence": 3,
+          "kind": "focus-semantic-target",
+          "targetReference": {
+            "assetId": "file-system-shape-contract",
+            "semanticAnchor": "placements",
+            "targetKind": "document-fragment"
+          },
+          "policyReference": "focus-without-obscuring-target-context"
+        },
+        {
+          "operationId": "show-semantic-contract:settle",
+          "sequence": 4,
+          "kind": "await-presentation-settlement",
+          "targetReference": {
+            "assetId": "file-system-shape-contract",
+            "semanticAnchor": "placements",
+            "targetKind": "document-fragment"
+          },
+          "settlementCondition": "target-stable-and-visible",
+          "policyReference": "settle-before-observation-or-recording-advance"
+        }
+      ]
+    }
+  ],
+  "disposition": "AUTHORIZED",
+  "findings": []
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "readme-asset-relationship.schema.v1.json",
+  "title": "README Asset Relationship",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "readme-asset-relationship.v1" }
+  },
+  "status": "scaffold"
+}

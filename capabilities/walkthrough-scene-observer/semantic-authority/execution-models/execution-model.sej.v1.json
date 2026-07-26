@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "walkthrough-scene-observer",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-walkthrough-scene-observer-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-walkthrough-scene-observer"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-walkthrough-scene-observer-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

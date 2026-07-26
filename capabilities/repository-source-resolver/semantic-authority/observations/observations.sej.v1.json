@@ -1,0 +1,34 @@
+{
+  "semanticType": "observation-catalog.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "entries": [
+    {
+      "observationId": "observe-github-repository-identity",
+      "portId": "observes-github-repository",
+      "records": [
+        "providerRepositoryId",
+        "owner",
+        "repositoryName",
+        "canonicalSlug",
+        "visibility",
+        "defaultBranch"
+      ]
+    },
+    {
+      "observationId": "observe-github-revision",
+      "portIds": [
+        "observes-github-default-branch",
+        "observes-github-branch",
+        "observes-github-tag",
+        "observes-github-commit"
+      ],
+      "records": ["requestedKind", "requestedValue", "fullCommitIdentity"]
+    },
+    {
+      "observationId": "observe-github-entrypoint",
+      "portId": "observes-github-entrypoint",
+      "records": ["path", "exists", "resolvedCommit"]
+    }
+  ]
+}

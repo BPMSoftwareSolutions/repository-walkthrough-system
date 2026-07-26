@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "browser-presentation-operation.schema.v1.json",
+  "type": "object",
+  "required": ["operationId", "sequence", "kind", "targetReference"],
+  "properties": {
+    "operationId": {"type": "string", "minLength": 1},
+    "sequence": {"type": "integer", "minimum": 1},
+    "kind": {
+      "enum": [
+        "navigate-to-presentation-asset",
+        "bring-semantic-target-into-view",
+        "focus-semantic-target",
+        "await-presentation-settlement"
+      ]
+    },
+    "targetReference": {
+      "type": "object",
+      "required": ["assetId", "semanticAnchor"],
+      "properties": {
+        "assetId": {"type": "string", "minLength": 1},
+        "semanticAnchor": {"type": "string", "minLength": 1},
+        "targetKind": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "policyReference": {"type": "string"},
+    "settlementCondition": {
+      "enum": ["target-visible", "target-stable-and-visible", "page-ready-and-target-visible"]
+    }
+  },
+  "additionalProperties": false
+}

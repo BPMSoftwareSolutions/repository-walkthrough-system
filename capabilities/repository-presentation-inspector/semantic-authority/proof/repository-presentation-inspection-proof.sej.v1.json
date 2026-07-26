@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "proofContractId": "repository-presentation-inspection-proof.v1",
+  "authorityCatalog": "../proof-requirements/proof-requirements.sej.v1.json",
+  "status": "implemented-first-slice"
+}

@@ -1,0 +1,28 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "browser-walkthrough-executor",
+  "title": "Browser Walkthrough Executor",
+  "outcome": "Mechanically execute a resolved browser plan and emit testimony.",
+  "owns": [
+    "browser session",
+    "browser operation",
+    "page",
+    "element",
+    "navigation result",
+    "scroll result",
+    "focus result",
+    "observed browser failure",
+    "execution disposition"
+  ],
+  "mustNotOwn": [
+    "learning objective",
+    "story beat",
+    "presentation emphasis",
+    "recording proof"
+  ],
+  "publicContract": "capabilities/browser-walkthrough-executor/contracts/browser-execution-testimony.schema.v1.json",
+  "dependencies": [
+    "browser-presentation-resolver"
+  ],
+  "status": "scaffold"
+}

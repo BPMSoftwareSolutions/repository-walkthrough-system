@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "walkthrough-scene-planner",
+  "title": "Walkthrough Scene Planner",
+  "purpose": "Project a resolved walkthrough story and repository presentation inventory into an ordered visual scene plan.",
+  "actor": "authorized-walkthrough-harness",
+  "trigger": "a resolved walkthrough story is submitted with its repository presentation inventory and an authorized scene-planning policy",
+  "desiredOutcome": "every required story beat is represented by an admitted, semantically anchored, ordered visual scene",
+  "constraints": [
+    "the planner must not emit browser selectors or platform-specific navigation instructions",
+    "every scene must reference an admitted presentation asset",
+    "every required story beat must have declared visual coverage",
+    "scene ordering must be resolved before browser presentation authority is requested",
+    "no scene may invent repository material absent from the presentation inventory",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions"
+  ],
+  "featureIds": [
+    "project-a-walkthrough-story-into-scenes"
+  ],
+  "status": "implemented-first-slice"
+}

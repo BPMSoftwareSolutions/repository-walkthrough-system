@@ -1,0 +1,8 @@
+{
+  "semanticType": "failure-policy.v1",
+  "capabilityId": "walkthrough-story-resolver",
+  "status": "scaffold",
+  "classifications": [],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

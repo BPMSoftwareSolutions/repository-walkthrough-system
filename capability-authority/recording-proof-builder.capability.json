@@ -1,0 +1,30 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "recording-proof-builder",
+  "title": "Recording Proof Builder",
+  "outcome": "Evaluate evidence and produce truthful recording proof.",
+  "owns": [
+    "proof requirement",
+    "recording evidence",
+    "scene evidence",
+    "artifact evidence",
+    "conformance",
+    "finding",
+    "proof disposition",
+    "proven walkthrough",
+    "rejected walkthrough",
+    "incomplete walkthrough"
+  ],
+  "mustNotOwn": [
+    "browser navigation",
+    "capture execution",
+    "story generation",
+    "scene replay"
+  ],
+  "publicContract": "capabilities/recording-proof-builder/contracts/repository-walkthrough-proof.schema.v1.json",
+  "dependencies": [
+    "screen-recording-controller",
+    "walkthrough-scene-observer"
+  ],
+  "status": "scaffold"
+}

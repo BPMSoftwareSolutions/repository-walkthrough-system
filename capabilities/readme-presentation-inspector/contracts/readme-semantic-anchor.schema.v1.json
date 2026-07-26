@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "readme-semantic-anchor.schema.v1.json",
+  "title": "README Semantic Anchor",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "readme-semantic-anchor.v1" }
+  },
+  "status": "scaffold"
+}

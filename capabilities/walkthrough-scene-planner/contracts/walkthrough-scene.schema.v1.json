@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "walkthrough-scene.schema.v1.json",
+  "title": "Repository Walkthrough Scene",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sceneId",
+    "storyBeatId",
+    "sequence",
+    "purpose",
+    "visualSource",
+    "visualSubject",
+    "presentationIntent",
+    "entrance",
+    "exit",
+    "continuityGroup"
+  ],
+  "properties": {
+    "sceneId": { "type": "string", "minLength": 1 },
+    "storyBeatId": { "type": "string", "minLength": 1 },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "purpose": {
+      "enum": [
+        "introduce-capability",
+        "present-architecture",
+        "explain-semantic-authority",
+        "show-execution-body",
+        "show-proof"
+      ]
+    },
+    "visualSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assetId"],
+      "properties": {
+        "assetId": { "type": "string", "minLength": 1 }
+      }
+    },
+    "visualSubject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "semanticAnchor"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "document-section",
+            "diagram",
+            "semantic-contract",
+            "source-fragment",
+            "gherkin-scenario",
+            "execution-receipt"
+          ]
+        },
+        "semanticAnchor": { "type": "string", "minLength": 1 }
+      }
+    },
+    "presentationIntent": {
+      "enum": ["establish", "trace", "focus", "demonstrate", "verify"]
+    },
+    "entrance": { "$ref": "scene-transition.schema.v1.json" },
+    "exit": { "$ref": "scene-transition.schema.v1.json" },
+    "continuityGroup": { "type": "string", "minLength": 1 }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

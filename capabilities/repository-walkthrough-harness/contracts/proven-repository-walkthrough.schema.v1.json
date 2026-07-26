@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "proven-repository-walkthrough.schema.v1.json",
+  "title": "Repository Walkthrough Harness Proven Repository Walkthrough",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "proven-repository-walkthrough.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "repository-walkthrough-harness",
+  "x-status": "scaffold"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "../contracts/repository-presentation-inventory.schema.v1.json",
+  "inventoryType": "repository-presentation-inventory.v1",
+  "inventoryId": "inventory-repository-presentation-inspector",
+  "repository": {
+    "repositoryId": "repository-presentation-inspector",
+    "provider": "local-workspace",
+    "revision": "revision-01",
+    "sourceReceiptHash": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "inspection": {
+    "profileId": "repository-overview.v1",
+    "authorityHash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "startedAt": "2026-07-26T12:00:00.000Z",
+    "completedAt": "2026-07-26T12:00:00.000Z"
+  },
+  "summary": {
+    "observedArtifactCount": 0,
+    "supportedArtifactCount": 0,
+    "presentationAssetCount": 0,
+    "recommendedAssetCount": 0,
+    "unsupportedArtifactCount": 0,
+    "blockedAssetCount": 0
+  },
+  "assets": [],
+  "findings": [],
+  "disposition": "NO_PRESENTABLE_MATERIAL",
+  "inventoryHash": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-source-resolution-receipt.schema.v1.json",
+  "title": "Repository Source Resolution Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "requestId", "requestHash", "recognizedReference", "repository", "requestedRevision", "resolvedRevision", "accessDisposition", "presentationEntrypoint", "observations", "sourceAuthorityHash", "idempotency", "disposition"],
+  "properties": {
+    "contractType": { "const": "repository-source-resolution-receipt.v1" },
+    "requestId": { "type": "string" },
+    "requestHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "recognizedReference": {
+      "type": "object",
+      "required": ["recognizerId", "providerId", "referenceKind"],
+      "properties": {
+        "recognizerId": { "type": "string" },
+        "providerId": { "type": "string" },
+        "referenceKind": { "const": "remote-repository" }
+      },
+      "additionalProperties": false
+    },
+    "repository": { "type": "object" },
+    "requestedRevision": { "type": "object" },
+    "resolvedRevision": { "type": "object" },
+    "accessDisposition": { "const": "authorized-public" },
+    "presentationEntrypoint": { "type": "object" },
+    "observations": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assertionId", "disposition"],
+        "properties": {
+          "assertionId": { "type": "string" },
+          "disposition": { "const": "satisfied" }
+        }
+      }
+    },
+    "sourceAuthorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "idempotency": { "const": "same-observations-produce-equivalent-authority" },
+    "disposition": { "enum": ["REPOSITORY_SOURCE_RESOLVED", "REPOSITORY_SOURCE_ALREADY_RESOLVED"] }
+  },
+  "x-capability-id": "repository-source-resolver",
+  "x-status": "implemented-first-slice"
+}

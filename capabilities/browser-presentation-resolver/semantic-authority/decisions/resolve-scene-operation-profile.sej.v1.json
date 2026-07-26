@@ -1,0 +1,23 @@
+{
+  "decisionId": "resolve-scene-operation-profile",
+  "inputs": ["scene.presentationIntent", "scene.visualSubject.kind"],
+  "rules": [
+    {
+      "when": {"scene.presentationIntent": "establish"},
+      "then": "navigate-scroll-focus-settle"
+    },
+    {
+      "when": {"scene.presentationIntent": "focus"},
+      "then": "navigate-scroll-focus-settle"
+    },
+    {
+      "when": {"scene.presentationIntent": "compare"},
+      "then": "navigate-scroll-focus-settle"
+    },
+    {
+      "when": {"scene.presentationIntent": "conclude"},
+      "then": "navigate-scroll-focus-settle"
+    },
+    {"when": {"*": true}, "then": "reject-unsupported-presentation-intent"}
+  ]
+}

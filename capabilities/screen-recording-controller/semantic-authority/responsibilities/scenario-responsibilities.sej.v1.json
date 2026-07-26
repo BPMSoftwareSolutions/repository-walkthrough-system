@@ -1,0 +1,37 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "screen-recording-controller",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "resolve-capture-source",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-recording-profile",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-recording-container",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-recording-lifecycle",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "classify-recording-result",
+      "sequence": 5,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-recording-artifact",
+      "sequence": 6,
+      "kind": "projection"
+    }
+  ]
+}

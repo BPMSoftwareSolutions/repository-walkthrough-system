@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "browser-presentation-resolution-receipt.schema.v1.json",
+  "type": "object",
+  "required": ["receiptType", "runId", "requestId", "requestHash", "authorityHash", "planHash", "disposition", "assertions"],
+  "properties": {
+    "receiptType": {"const": "browser-presentation-resolution-receipt.v1"},
+    "runId": {"type": "string", "minLength": 1},
+    "requestId": {"type": "string", "minLength": 1},
+    "requestHash": {"type": "string", "pattern": "^sha256:"},
+    "authorityHash": {"type": "string", "pattern": "^sha256:"},
+    "planHash": {"type": "string", "pattern": "^sha256:"},
+    "disposition": {"enum": ["BROWSER_PRESENTATION_AUTHORIZED", "BROWSER_PRESENTATION_REJECTED"]},
+    "assertions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["assertionId", "satisfied", "assertionLocation"],
+        "properties": {
+          "assertionId": {"type": "string"},
+          "satisfied": {"type": "boolean"},
+          "assertionLocation": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

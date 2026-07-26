@@ -1,0 +1,27 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "responsibilityId": "resolve-repository-provider",
+  "status": "implemented-first-slice",
+  "decisionId": "resolve-repository-provider",
+  "inputs": [
+    "recognizedReference.providerId",
+    "request.providerHint"
+  ],
+  "rules": [
+    {
+      "when": {
+        "recognizedReference.providerId": "github",
+        "request.providerHint": {
+          "absentOrEquals": "github"
+        }
+      },
+      "then": "authorize-github-public-observation"
+    },
+    {
+      "when": {
+        "*": true
+      },
+      "then": "reject-unsupported-provider"
+    }
+  ]
+}

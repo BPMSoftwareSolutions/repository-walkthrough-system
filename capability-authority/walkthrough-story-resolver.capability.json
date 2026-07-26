@@ -1,0 +1,33 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "walkthrough-story-resolver",
+  "title": "Walkthrough Story Resolver",
+  "outcome": "Produce the semantic story the walkthrough intends to communicate.",
+  "owns": [
+    "audience",
+    "learning objective",
+    "story",
+    "story beat",
+    "concept",
+    "explanation",
+    "introduction",
+    "demonstration",
+    "evidence",
+    "conclusion",
+    "narrative order",
+    "presentation emphasis"
+  ],
+  "mustNotOwn": [
+    "CSS selector",
+    "DOM element",
+    "browser viewport",
+    "FFmpeg",
+    "WebM",
+    "Playwright"
+  ],
+  "publicContract": "capabilities/walkthrough-story-resolver/contracts/walkthrough-story.schema.v1.json",
+  "dependencies": [
+    "repository-presentation-inspector"
+  ],
+  "status": "scaffold"
+}

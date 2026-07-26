@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-repository-source-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-repository-source-resolution"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-repository-source-resolution-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

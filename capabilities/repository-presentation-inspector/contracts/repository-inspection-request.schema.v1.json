@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-inspection-request.schema.v1.json",
+  "title": "Repository Presentation Inspection Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "requestId",
+    "source",
+    "profileId",
+    "inventoryContractVersion",
+    "inspectionTimestamp"
+  ],
+  "properties": {
+    "contractType": { "const": "repository-presentation-inspection-request.v1" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contractType",
+        "repositoryId",
+        "provider",
+        "revision",
+        "authorizedRoot",
+        "sourceReceiptHash"
+      ],
+      "properties": {
+        "contractType": { "const": "resolved-local-repository-source.v1" },
+        "repositoryId": { "type": "string", "minLength": 1 },
+        "provider": { "const": "local-workspace" },
+        "revision": { "type": "string", "minLength": 1 },
+        "authorizedRoot": { "type": "string", "minLength": 1 },
+        "sourceReceiptHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      }
+    },
+    "profileId": { "const": "repository-overview.v1" },
+    "inventoryContractVersion": { "const": "repository-presentation-inventory.v1" },
+    "inspectionTimestamp": { "type": "string", "format": "date-time" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

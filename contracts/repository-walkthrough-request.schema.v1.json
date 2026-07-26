@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-walkthrough-request.schema.v1.json",
+  "title": "Repository Walkthrough Request",
+  "type": "object",
+  "required": ["requestId", "repositoryReference", "presentationIntent", "recordingProfile"],
+  "properties": {
+    "requestId": { "type": "string", "minLength": 1 },
+    "repositoryReference": { "type": "object" },
+    "presentationIntent": { "type": "object" },
+    "recordingProfile": { "type": "object" }
+  },
+  "additionalProperties": false,
+  "x-status": "scaffold"
+}

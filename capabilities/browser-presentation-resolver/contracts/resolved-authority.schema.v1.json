@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolved-authority.schema.v1.json",
+  "title": "Browser Presentation Resolver Resolved Authority",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "resolved-authority.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "browser-presentation-resolver",
+  "x-status": "scaffold"
+}

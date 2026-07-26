@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "recording-proof-finding.schema.v1.json",
+  "title": "Recording Proof Builder Recording Proof Finding",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "recording-proof-finding.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "recording-proof-builder",
+  "x-status": "scaffold"
+}

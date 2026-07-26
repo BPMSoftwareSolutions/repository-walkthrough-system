@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scene-transition.schema.v1.json",
+  "title": "Semantic Scene Transition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["disposition"],
+  "properties": {
+    "disposition": {
+      "enum": [
+        "establish-new-source",
+        "retain-source-change-focus",
+        "preserve-context"
+      ]
+    }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

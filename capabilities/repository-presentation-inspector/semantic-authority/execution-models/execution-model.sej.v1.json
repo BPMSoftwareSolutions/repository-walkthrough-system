@@ -1,0 +1,88 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "implemented-first-slice",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "validate-inspection-request",
+      "decisionId": "validate-inspection-request"
+    },
+    {
+      "sequence": 2,
+      "operation": "observe-repository-artifacts",
+      "iterationId": "observe-authorized-repository-artifacts"
+    },
+    {
+      "sequence": 3,
+      "operation": "classify-repository-artifacts",
+      "decisionId": "classify-repository-artifact"
+    },
+    {
+      "sequence": 4,
+      "operation": "inspect-supported-artifact-content",
+      "iterationId": "inspect-supported-artifact-content"
+    },
+    {
+      "sequence": 5,
+      "operation": "classify-presentation-units",
+      "decisionId": "classify-presentation-unit"
+    },
+    {
+      "sequence": 6,
+      "operation": "resolve-presentation-anchors",
+      "projectionId": "project-semantic-presentation-anchor"
+    },
+    {
+      "sequence": 7,
+      "operation": "resolve-presentability",
+      "decisionId": "resolve-presentation-unit-presentability"
+    },
+    {
+      "sequence": 8,
+      "operation": "resolve-presentation-significance",
+      "decisionId": "resolve-presentation-significance"
+    },
+    {
+      "sequence": 9,
+      "operation": "resolve-presentation-readiness",
+      "decisionId": "resolve-presentation-readiness"
+    },
+    {
+      "sequence": 10,
+      "operation": "order-presentation-assets",
+      "orderingId": "order-repository-presentation-assets"
+    },
+    {
+      "sequence": 11,
+      "operation": "project-presentation-inventory-and-receipt",
+      "projectionIds": [
+        "project-repository-presentation-inventory",
+        "project-repository-presentation-inspection-receipt"
+      ]
+    }
+  ],
+  "iterationAuthority": [
+    {
+      "iterationId": "observe-authorized-repository-artifacts",
+      "collection": "$.observedArtifacts",
+      "order": "repository-relative-path-ordinal",
+      "forEach": {
+        "resolve": "classify-repository-artifact",
+        "invoke": "inspect-supported-artifact-content"
+      },
+      "unsupportedItemDisposition": "preserve-with-finding"
+    },
+    {
+      "iterationId": "inspect-supported-artifact-content",
+      "collection": "$.supportedArtifacts",
+      "order": "repository-relative-path-ordinal",
+      "forEach": {
+        "observe": "observe-supported-artifact-content",
+        "resolve": "classify-presentation-unit"
+      },
+      "unsupportedItemDisposition": "preserve-with-finding"
+    }
+  ],
+  "stateTransitions": []
+}

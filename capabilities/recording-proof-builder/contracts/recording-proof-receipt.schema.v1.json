@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "recording-proof-receipt.schema.v1.json",
+  "title": "Recording Proof Builder Recording Proof Receipt",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "recording-proof-receipt.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "recording-proof-builder",
+  "x-status": "scaffold"
+}

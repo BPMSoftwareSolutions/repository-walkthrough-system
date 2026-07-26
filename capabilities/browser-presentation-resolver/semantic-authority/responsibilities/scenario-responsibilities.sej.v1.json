@@ -1,0 +1,52 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "browser-presentation-resolver",
+  "status": "scaffold",
+  "responsibilities": [
+    {
+      "responsibilityId": "resolve-presentation-surface",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-navigation-operation",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-visual-target",
+      "sequence": 3,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-viewport-profile",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-scroll-path",
+      "sequence": 5,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-focus-action",
+      "sequence": 6,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-settling-condition",
+      "sequence": 7,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "order-browser-presentation-operations",
+      "sequence": 8,
+      "kind": "execution-model"
+    },
+    {
+      "responsibilityId": "project-resolved-browser-presentation",
+      "sequence": 9,
+      "kind": "projection"
+    }
+  ]
+}

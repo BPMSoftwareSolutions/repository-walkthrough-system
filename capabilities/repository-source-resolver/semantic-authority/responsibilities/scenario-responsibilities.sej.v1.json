@@ -1,0 +1,42 @@
+{
+  "semanticType": "scenario-responsibility-catalog.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "responsibilities": [
+    {
+      "responsibilityId": "recognize-repository-reference",
+      "sequence": 1,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-repository-provider",
+      "sequence": 2,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "observe-repository-identity",
+      "sequence": 3,
+      "kind": "observation"
+    },
+    {
+      "responsibilityId": "resolve-repository-access",
+      "sequence": 4,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-repository-revision",
+      "sequence": 5,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "resolve-presentation-entrypoint",
+      "sequence": 6,
+      "kind": "decision"
+    },
+    {
+      "responsibilityId": "project-resolved-repository-source",
+      "sequence": 7,
+      "kind": "projection"
+    }
+  ]
+}

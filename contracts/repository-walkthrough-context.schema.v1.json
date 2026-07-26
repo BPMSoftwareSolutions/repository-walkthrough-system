@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-walkthrough-context.schema.v1.json",
+  "title": "Repository Walkthrough Context",
+  "type": "object",
+  "required": ["request", "capabilityBindings", "proofContext"],
+  "properties": {
+    "request": { "$ref": "repository-walkthrough-request.schema.v1.json" },
+    "capabilityBindings": { "type": "object" },
+    "proofContext": { "type": "object" }
+  },
+  "additionalProperties": false,
+  "x-status": "scaffold"
+}

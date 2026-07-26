@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "repository-presentation-inspector",
+  "title": "Repository Presentation Inspector",
+  "purpose": "Produce a verified inventory of presentable material from an authorized repository source.",
+  "actor": "authorized-walkthrough-harness",
+  "trigger": "a resolved repository source is submitted for presentation inspection",
+  "desiredOutcome": "all supported presentable repository material is classified, anchored, ranked, and projected into a deterministic presentation inventory",
+  "constraints": [
+    "the repository source must already be resolved and immutable",
+    "inspection must not mutate the repository",
+    "unsupported artifacts must be reported rather than silently ignored",
+    "presentation significance must be resolved through declared semantic authority",
+    "all inventory entries must reference observable repository locations",
+    "the inspection receipt must identify the inspected repository revision",
+    "the capability must not construct a walkthrough story or scene plan"
+  ],
+  "featureIds": [
+    "inventory-presentable-repository-material"
+  ],
+  "status": "implemented-first-slice"
+}

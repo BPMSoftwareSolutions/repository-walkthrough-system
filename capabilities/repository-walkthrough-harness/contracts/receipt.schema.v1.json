@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt.schema.v1.json",
+  "title": "Repository Walkthrough Harness Receipt",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "receipt.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "repository-walkthrough-harness",
+  "x-status": "scaffold"
+}

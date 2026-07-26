@@ -1,0 +1,11 @@
+{
+  "semanticType": "proof-requirements.v1",
+  "capabilityId": "browser-presentation-resolver",
+  "status": "scaffold",
+  "requiredAssertions": [
+    "intent-identity-recorded",
+    "resolved-authority-identity-recorded",
+    "effect-results-recorded",
+    "final-disposition-recorded"
+  ]
+}

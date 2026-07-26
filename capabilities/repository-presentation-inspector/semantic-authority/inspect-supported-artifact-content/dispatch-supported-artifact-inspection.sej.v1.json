@@ -1,0 +1,6 @@
+{
+  "semanticType": "semantic-authority-reference.v1",
+  "decisionId": "dispatch-supported-artifact-inspection",
+  "authorityCatalog": "../decisions/decisions.sej.v1.json",
+  "status": "implemented-first-slice"
+}

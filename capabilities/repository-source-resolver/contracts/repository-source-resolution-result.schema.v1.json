@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-source-resolution-result.schema.v1.json",
+  "title": "Repository Source Resolution Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "disposition", "source", "receipt", "findings"],
+  "properties": {
+    "contractType": { "const": "repository-source-resolution-result.v1" },
+    "disposition": {
+      "enum": [
+        "REPOSITORY_SOURCE_RESOLVED",
+        "REPOSITORY_SOURCE_ALREADY_RESOLVED",
+        "INVALID_SOURCE_REQUEST",
+        "UNSUPPORTED_REFERENCE",
+        "AMBIGUOUS_REFERENCE",
+        "UNSUPPORTED_PROVIDER",
+        "REPOSITORY_NOT_FOUND",
+        "REPOSITORY_ACCESS_DENIED",
+        "PROVIDER_UNREACHABLE",
+        "REVISION_NOT_FOUND",
+        "REVISION_NOT_IMMUTABLE",
+        "PRESENTATION_ENTRYPOINT_NOT_FOUND",
+        "PRESENTATION_ENTRYPOINT_OUTSIDE_REPOSITORY",
+        "SOURCE_RESOLUTION_FAILED"
+      ]
+    },
+    "source": {
+      "oneOf": [
+        { "$ref": "resolved-repository-source.schema.v1.json" },
+        { "type": "null" }
+      ]
+    },
+    "receipt": {
+      "oneOf": [
+        { "$ref": "repository-source-resolution-receipt.schema.v1.json" },
+        { "type": "null" }
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["findingId", "disposition"],
+        "properties": {
+          "findingId": { "type": "string" },
+          "disposition": { "const": "blocking" }
+        }
+      }
+    }
+  },
+  "x-status": "implemented-first-slice"
+}

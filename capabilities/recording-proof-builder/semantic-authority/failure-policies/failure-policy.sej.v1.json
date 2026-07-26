@@ -1,0 +1,8 @@
+{
+  "semanticType": "failure-policy.v1",
+  "capabilityId": "recording-proof-builder",
+  "status": "scaffold",
+  "classifications": [],
+  "fallbackPolicy": "no-implicit-fallback",
+  "retryPolicy": "no-implicit-retry"
+}

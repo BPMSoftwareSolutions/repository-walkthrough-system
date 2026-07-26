@@ -1,0 +1,174 @@
+{
+  "inventoryType": "repository-presentation-inventory.v1",
+  "inventoryId": "file-system-shaper-presentation-v1",
+  "repository": {
+    "repositoryId": "file-system-shaper",
+    "provider": "local-workspace",
+    "revision": "8f4d31c5c3dd4f6c127d6d41a8de65477d5037e1",
+    "sourceReceiptHash": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+  },
+  "inspection": {
+    "profileId": "repository-overview.v1",
+    "authorityHash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "startedAt": "2026-07-26T12:00:00.000Z",
+    "completedAt": "2026-07-26T12:00:01.000Z"
+  },
+  "summary": {
+    "observedArtifactCount": 5,
+    "supportedArtifactCount": 5,
+    "presentationAssetCount": 5,
+    "recommendedAssetCount": 5,
+    "unsupportedArtifactCount": 0,
+    "blockedAssetCount": 0
+  },
+  "assets": [
+    {
+      "contractType": "presentation-asset.v1",
+      "assetId": "readme-title-and-purpose",
+      "artifactId": "README.md",
+      "kind": "document-section",
+      "title": "Purpose",
+      "location": {
+        "repositoryRelativePath": "README.md",
+        "semanticAnchor": "purpose"
+      },
+      "source": {
+        "artifactKind": "readme-document",
+        "startLine": 1,
+        "endLine": 12,
+        "contentHash": "sha256:4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "presentation": {
+        "presentability": "recommended",
+        "significance": "foundational",
+        "readiness": "ready",
+        "supportedSurfaces": ["repository-browser", "markdown-renderer"]
+      },
+      "relationships": {
+        "parentAssetId": null,
+        "childAssetIds": [],
+        "relatedAssetIds": []
+      },
+      "findings": []
+    },
+    {
+      "contractType": "presentation-asset.v1",
+      "assetId": "file-system-shaper-architecture-diagram",
+      "artifactId": "architecture/file-system-shaper.ascii.md",
+      "kind": "architecture-diagram",
+      "title": "File System Shaper Architecture",
+      "location": {
+        "repositoryRelativePath": "architecture/file-system-shaper.ascii.md",
+        "semanticAnchor": "architecture"
+      },
+      "source": {
+        "artifactKind": "markdown-document",
+        "startLine": 3,
+        "endLine": 24,
+        "contentHash": "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+      },
+      "presentation": {
+        "presentability": "recommended",
+        "significance": "primary",
+        "readiness": "ready",
+        "supportedSurfaces": ["repository-browser", "markdown-renderer"]
+      },
+      "relationships": {
+        "parentAssetId": null,
+        "childAssetIds": [],
+        "relatedAssetIds": []
+      },
+      "findings": []
+    },
+    {
+      "contractType": "presentation-asset.v1",
+      "assetId": "file-system-shape-contract",
+      "artifactId": "semantic-authority/placements.sej.v1.json",
+      "kind": "contract-definition",
+      "title": "Placement Semantic Contract",
+      "location": {
+        "repositoryRelativePath": "semantic-authority/placements.sej.v1.json",
+        "semanticAnchor": "placements"
+      },
+      "source": {
+        "artifactKind": "semantic-authority",
+        "startLine": 1,
+        "endLine": 40,
+        "contentHash": "sha256:6666666666666666666666666666666666666666666666666666666666666666"
+      },
+      "presentation": {
+        "presentability": "recommended",
+        "significance": "primary",
+        "readiness": "ready",
+        "supportedSurfaces": ["repository-browser", "source-viewer"]
+      },
+      "relationships": {
+        "parentAssetId": null,
+        "childAssetIds": [],
+        "relatedAssetIds": []
+      },
+      "findings": []
+    },
+    {
+      "contractType": "presentation-asset.v1",
+      "assetId": "shapes-file-system-source",
+      "artifactId": "runtime/shapes-file-system.ts",
+      "kind": "execution-body",
+      "title": "Shapes File System",
+      "location": {
+        "repositoryRelativePath": "runtime/shapes-file-system.ts",
+        "semanticAnchor": "shapesFileSystem"
+      },
+      "source": {
+        "artifactKind": "source-file",
+        "startLine": 10,
+        "endLine": 22,
+        "contentHash": "sha256:7777777777777777777777777777777777777777777777777777777777777777"
+      },
+      "presentation": {
+        "presentability": "recommended",
+        "significance": "primary",
+        "readiness": "ready",
+        "supportedSurfaces": ["repository-browser", "source-viewer"]
+      },
+      "relationships": {
+        "parentAssetId": null,
+        "childAssetIds": [],
+        "relatedAssetIds": []
+      },
+      "findings": []
+    },
+    {
+      "contractType": "presentation-asset.v1",
+      "assetId": "file-system-shaping-receipt",
+      "artifactId": "proof/fixtures/successful-receipt.json",
+      "kind": "document-section",
+      "title": "Verified Operations Execution Receipt",
+      "location": {
+        "repositoryRelativePath": "proof/fixtures/successful-receipt.json",
+        "semanticAnchor": "verified-operations"
+      },
+      "source": {
+        "artifactKind": "json-contract",
+        "startLine": 1,
+        "endLine": 35,
+        "contentHash": "sha256:8888888888888888888888888888888888888888888888888888888888888888"
+      },
+      "presentation": {
+        "presentability": "recommended",
+        "significance": "primary",
+        "readiness": "ready",
+        "supportedSurfaces": ["repository-browser", "source-viewer"]
+      },
+      "relationships": {
+        "parentAssetId": null,
+        "childAssetIds": [],
+        "relatedAssetIds": []
+      },
+      "findings": []
+    }
+  ],
+  "findings": [],
+  "disposition": "PRESENTATION_INVENTORY_PRODUCED",
+  "inventoryHash": "sha256:9999999999999999999999999999999999999999999999999999999999999999"
+}

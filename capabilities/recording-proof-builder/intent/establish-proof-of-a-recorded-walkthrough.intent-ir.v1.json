@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../contracts/intent-ir.schema.v1.json",
+  "capabilityId": "recording-proof-builder",
+  "title": "Recording Proof Builder",
+  "purpose": "Evaluate evidence and produce truthful recording proof.",
+  "actor": "authorized-caller",
+  "trigger": "recording artifact evidence and declared scene evidence are submitted",
+  "desiredOutcome": "a proven, rejected, or incomplete recording disposition is established from evidence",
+  "constraints": [
+    "canonical meaning is limited to recording conformance",
+    "all capability-specific decisions are declared in semantic authority",
+    "runtime bodies execute resolved authority without authored domain decisions",
+    "effects occur only through declared ports and produce proof receipts"
+  ],
+  "featureIds": [
+    "establish-proof-of-a-recorded-walkthrough"
+  ],
+  "status": "scaffold"
+}

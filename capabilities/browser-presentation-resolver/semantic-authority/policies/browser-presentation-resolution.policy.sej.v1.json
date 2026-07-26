@@ -1,0 +1,10 @@
+{
+  "policyId": "browser-presentation-resolution-policy-v1",
+  "unsupportedSurface": "reject-before-operation-authorization",
+  "missingAssetIdentity": "reject-before-operation-authorization",
+  "missingSemanticAnchor": "reject-before-operation-authorization",
+  "executorSpecificLocator": "prohibit",
+  "operationOrder": "ascending-sequence",
+  "settlement": "required-after-focus",
+  "partialPlan": "prohibit"
+}

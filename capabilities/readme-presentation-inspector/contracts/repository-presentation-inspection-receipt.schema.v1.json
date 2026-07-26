@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-presentation-inspection-receipt.schema.v1.json",
+  "title": "Repository Presentation Inspector Repository Presentation Inspection Receipt",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "repository-presentation-inspection-receipt.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "scaffold"
+}

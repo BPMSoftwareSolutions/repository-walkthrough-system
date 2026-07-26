@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "repository-walkthrough-harness",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-repository-walkthrough-harness-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-repository-walkthrough-harness"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-repository-walkthrough-harness-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

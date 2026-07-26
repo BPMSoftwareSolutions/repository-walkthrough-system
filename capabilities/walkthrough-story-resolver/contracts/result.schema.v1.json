@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "result.schema.v1.json",
+  "title": "Walkthrough Story Resolver Result",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "result.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "walkthrough-story-resolver",
+  "x-status": "scaffold"
+}

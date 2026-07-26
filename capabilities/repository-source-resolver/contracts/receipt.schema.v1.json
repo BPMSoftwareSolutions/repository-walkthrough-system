@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt.schema.v1.json",
+  "title": "Repository Source Resolver Receipt Alias",
+  "$ref": "repository-source-resolution-receipt.schema.v1.json",
+  "type": "object",
+  "x-capability-id": "repository-source-resolver",
+  "x-status": "implemented-first-slice"
+}

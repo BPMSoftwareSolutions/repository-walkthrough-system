@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repository-presentation-inventory.schema.v1.json",
+  "title": "Repository Presentation Inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inventoryType",
+    "inventoryId",
+    "repository",
+    "inspection",
+    "summary",
+    "assets",
+    "findings",
+    "disposition",
+    "inventoryHash"
+  ],
+  "properties": {
+    "inventoryType": { "const": "repository-presentation-inventory.v1" },
+    "inventoryId": { "type": "string", "minLength": 1 },
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repositoryId", "provider", "revision", "sourceReceiptHash"],
+      "properties": {
+        "repositoryId": { "type": "string" },
+        "provider": { "const": "local-workspace" },
+        "revision": { "type": "string" },
+        "sourceReceiptHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      }
+    },
+    "inspection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profileId", "authorityHash", "startedAt", "completedAt"],
+      "properties": {
+        "profileId": { "const": "repository-overview.v1" },
+        "authorityHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "completedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observedArtifactCount",
+        "supportedArtifactCount",
+        "presentationAssetCount",
+        "recommendedAssetCount",
+        "unsupportedArtifactCount",
+        "blockedAssetCount"
+      ],
+      "properties": {
+        "observedArtifactCount": { "type": "integer", "minimum": 0 },
+        "supportedArtifactCount": { "type": "integer", "minimum": 0 },
+        "presentationAssetCount": { "type": "integer", "minimum": 0 },
+        "recommendedAssetCount": { "type": "integer", "minimum": 0 },
+        "unsupportedArtifactCount": { "type": "integer", "minimum": 0 },
+        "blockedAssetCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": { "$ref": "presentation-asset.schema.v1.json" }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["findingId", "kind", "disposition", "artifactPath"],
+        "properties": {
+          "findingId": { "type": "string" },
+          "kind": { "type": "string" },
+          "disposition": { "enum": ["finding", "blocking"] },
+          "artifactPath": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "disposition": {
+      "enum": [
+        "PRESENTATION_INVENTORY_PRODUCED",
+        "PRESENTATION_INVENTORY_PRODUCED_WITH_FINDINGS",
+        "NO_PRESENTABLE_MATERIAL",
+        "BLOCKED_REPOSITORY_UNREADABLE",
+        "BLOCKED_INSPECTION_SCOPE_VIOLATION"
+      ]
+    },
+    "inventoryHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+  },
+  "x-capability-id": "repository-presentation-inspector",
+  "x-status": "implemented-first-slice"
+}

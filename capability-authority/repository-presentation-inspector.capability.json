@@ -1,0 +1,30 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "title": "Repository Presentation Inspector",
+  "outcome": "Produce an inventory of presentable repository material.",
+  "owns": [
+    "presentation asset",
+    "document",
+    "section",
+    "heading",
+    "diagram",
+    "source example",
+    "feature example",
+    "contract example",
+    "proof example",
+    "presentability",
+    "repository presentation inventory"
+  ],
+  "mustNotOwn": [
+    "story beat",
+    "scroll path",
+    "recording profile",
+    "video codec"
+  ],
+  "publicContract": "capabilities/repository-presentation-inspector/contracts/repository-presentation-inventory.schema.v1.json",
+  "dependencies": [
+    "repository-source-resolver"
+  ],
+  "status": "scaffold"
+}

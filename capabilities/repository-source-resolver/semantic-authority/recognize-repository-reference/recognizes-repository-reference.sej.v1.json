@@ -1,0 +1,45 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "responsibilityId": "recognizes-repository-reference",
+  "status": "implemented-first-slice",
+  "decisionId": "recognize-repository-reference",
+  "inputs": [
+    "request.reference",
+    "recognitionAuthorities"
+  ],
+  "rules": [
+    {
+      "when": {
+        "matchingAuthorityCount": 1
+      },
+      "then": "recognized"
+    },
+    {
+      "when": {
+        "matchingAuthorityCount": 0
+      },
+      "then": "reject-unsupported-reference"
+    },
+    {
+      "when": {
+        "matchingAuthorityCount": {
+          "greaterThan": 1
+        }
+      },
+      "then": "reject-ambiguous-reference"
+    }
+  ],
+  "authorities": [
+    {
+      "recognizerId": "recognize-github-https-reference",
+      "referenceDialect": "github-https",
+      "providerId": "github",
+      "host": "github.com",
+      "pattern": "^https://github\\.com/([^/?#]+)/([^/?#]+?)(?:\\.git)?/?$",
+      "captures": {
+        "owner": 1,
+        "repositoryName": 2
+      }
+    }
+  ]
+}

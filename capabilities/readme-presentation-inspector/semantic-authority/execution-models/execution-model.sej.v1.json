@@ -1,0 +1,21 @@
+{
+  "semanticType": "execution-model.v1",
+  "capabilityId": "repository-presentation-inspector",
+  "status": "scaffold",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "resolve-repository-presentation-inspector-authority"
+    },
+    {
+      "sequence": 2,
+      "operation": "execute-resolved-repository-presentation-inspector"
+    },
+    {
+      "sequence": 3,
+      "operation": "project-repository-presentation-inspector-result"
+    }
+  ],
+  "iterationAuthority": [],
+  "stateTransitions": []
+}

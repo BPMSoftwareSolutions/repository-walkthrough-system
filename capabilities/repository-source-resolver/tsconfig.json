@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": ".",
+    "outDir": "dist",
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "adapters/**/*.ts",
+    "application/**/*.ts",
+    "entrypoints/**/*.ts",
+    "projectors/**/*.ts",
+    "proof/**/*.test.ts",
+    "runtime/**/*.ts"
+  ]
+}

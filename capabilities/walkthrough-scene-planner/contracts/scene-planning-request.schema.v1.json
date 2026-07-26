@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scene-planning-request.schema.v1.json",
+  "title": "Repository Walkthrough Scene Planning Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractType",
+    "requestId",
+    "story",
+    "presentationInventory",
+    "planningPolicy"
+  ],
+  "properties": {
+    "contractType": { "const": "scene-planning-request.v1" },
+    "requestId": { "type": "string", "minLength": 1 },
+    "story": {
+      "allOf": [
+        { "$ref": "walkthrough-story.schema.v1.json" },
+        {
+          "type": "object",
+          "required": ["storyId", "repositoryId", "storyHash", "beats"],
+          "properties": {
+            "storyId": { "type": "string", "minLength": 1 },
+            "repositoryId": { "type": "string", "minLength": 1 },
+            "storyHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "beats": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "storyBeatId",
+                  "sequence",
+                  "required",
+                  "purpose",
+                  "requiredConcepts",
+                  "continuityGroup"
+                ],
+                "properties": {
+                  "storyBeatId": { "type": "string", "minLength": 1 },
+                  "sequence": { "type": "integer", "minimum": 1 },
+                  "required": { "type": "boolean" },
+                  "purpose": {
+                    "enum": [
+                      "introduce-capability",
+                      "explain-architecture",
+                      "explain-semantic-contract",
+                      "show-collapsed-execution-body",
+                      "show-execution-proof"
+                    ]
+                  },
+                  "requiredConcepts": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "type": "string", "minLength": 1 },
+                    "uniqueItems": true
+                  },
+                  "continuityGroup": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "presentationInventory": {
+      "$ref": "repository-presentation-inventory.schema.v1.json"
+    },
+    "planningPolicy": { "$ref": "scene-planning-policy.schema.v1.json" }
+  },
+  "x-capability-id": "walkthrough-scene-planner",
+  "x-status": "implemented-first-slice"
+}

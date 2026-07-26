@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "execution-context.schema.v1.json",
+  "title": "Repository Source Resolver Execution Context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractType", "request", "portAuthority"],
+  "properties": {
+    "contractType": { "const": "repository-source-resolution-context.v1" },
+    "request": { "$ref": "repository-source-request.schema.v1.json" },
+    "portAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "accessPosture"],
+      "properties": {
+        "provider": { "const": "github" },
+        "accessPosture": { "const": "public-read-only" }
+      }
+    }
+  },
+  "x-capability-id": "repository-source-resolver",
+  "x-status": "implemented-first-slice"
+}

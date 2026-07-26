@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "readme-presentation-inspector.intent-ir.schema.v1.json",
+  "title": "README Presentation Inspector Intent IR",
+  "type": "object",
+  "required": ["contractType"],
+  "properties": {
+    "contractType": { "const": "readme-presentation-inspector.intent-ir.v1" }
+  },
+  "status": "scaffold"
+}

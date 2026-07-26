@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "browser-operation-result.schema.v1.json",
+  "title": "Browser Walkthrough Executor Browser Operation Result",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "browser-operation-result.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "browser-walkthrough-executor",
+  "x-status": "scaffold"
+}

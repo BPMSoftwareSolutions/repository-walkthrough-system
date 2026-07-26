@@ -1,0 +1,43 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "responsibilityId": "resolve-repository-access-disposition",
+  "status": "implemented-first-slice",
+  "decisionId": "resolve-repository-access-disposition",
+  "inputs": [
+    "observation.status",
+    "observation.repository.visibility"
+  ],
+  "rules": [
+    {
+      "when": {
+        "observation.status": "observed",
+        "observation.repository.visibility": "public"
+      },
+      "then": "authorized-public"
+    },
+    {
+      "when": {
+        "observation.status": "not-found"
+      },
+      "then": "reject-repository-not-found"
+    },
+    {
+      "when": {
+        "observation.status": "access-denied"
+      },
+      "then": "reject-repository-access-denied"
+    },
+    {
+      "when": {
+        "observation.status": "unreachable"
+      },
+      "then": "reject-provider-unreachable"
+    },
+    {
+      "when": {
+        "*": true
+      },
+      "then": "reject-repository-access-denied"
+    }
+  ]
+}

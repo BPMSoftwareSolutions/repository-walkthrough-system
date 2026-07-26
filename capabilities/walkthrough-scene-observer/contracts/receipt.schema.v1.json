@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "receipt.schema.v1.json",
+  "title": "Walkthrough Scene Observer Receipt",
+  "type": "object",
+  "required": [
+    "contractType"
+  ],
+  "properties": {
+    "contractType": {
+      "const": "receipt.v1"
+    }
+  },
+  "additionalProperties": true,
+  "x-capability-id": "walkthrough-scene-observer",
+  "x-status": "scaffold"
+}

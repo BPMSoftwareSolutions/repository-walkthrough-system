@@ -1,0 +1,10 @@
+{
+  "decisionId": "resolve-viewport-profile",
+  "inputs": ["viewportProfile"],
+  "rules": [
+    {"when": {"viewportProfile": "desktop-standard"}, "then": {"profileId": "desktop-standard", "width": 1440, "height": 900, "deviceScaleFactor": 1}},
+    {"when": {"viewportProfile": "desktop-wide"}, "then": {"profileId": "desktop-wide", "width": 1920, "height": 1080, "deviceScaleFactor": 1}},
+    {"when": {"viewportProfile": "mobile-portrait"}, "then": {"profileId": "mobile-portrait", "width": 430, "height": 932, "deviceScaleFactor": 3}},
+    {"when": {"*": true}, "then": "reject-unsupported-viewport-profile"}
+  ]
+}

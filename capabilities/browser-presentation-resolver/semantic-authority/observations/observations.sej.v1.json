@@ -1,0 +1,6 @@
+{
+  "semanticType": "observation-catalog.v1",
+  "capabilityId": "browser-presentation-resolver",
+  "status": "scaffold",
+  "entries": []
+}

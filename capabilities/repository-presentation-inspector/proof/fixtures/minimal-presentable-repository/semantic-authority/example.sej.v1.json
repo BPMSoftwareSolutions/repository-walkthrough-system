@@ -1,0 +1,13 @@
+{
+  "semanticType": "decision-catalog.v1",
+  "entries": [
+    {
+      "decisionId": "resolve-example",
+      "rules": []
+    },
+    {
+      "projectionId": "project-example",
+      "fields": {}
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "capabilityType": "repository-walkthrough-capability.v1",
+  "capabilityId": "screen-recording-controller",
+  "title": "Screen Recording Controller",
+  "outcome": "Capture an authorized visual session as an inspectable recording artifact.",
+  "owns": [
+    "recording session",
+    "capture source",
+    "capture region",
+    "frame",
+    "frame rate",
+    "resolution",
+    "recording stream",
+    "container",
+    "codec",
+    "recording artifact",
+    "recording integrity"
+  ],
+  "mustNotOwn": [
+    "GitHub",
+    "README",
+    "scene meaning",
+    "repository",
+    "architecture explanation"
+  ],
+  "publicContract": "capabilities/screen-recording-controller/contracts/recording-artifact.schema.v1.json",
+  "dependencies": [],
+  "status": "scaffold"
+}

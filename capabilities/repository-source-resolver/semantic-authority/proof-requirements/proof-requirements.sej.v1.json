@@ -1,0 +1,19 @@
+{
+  "semanticType": "proof-requirements.v1",
+  "capabilityId": "repository-source-resolver",
+  "status": "implemented-first-slice",
+  "requiredAssertions": [
+    "submitted-reference-recorded",
+    "recognition-authority-recorded",
+    "repository-provider-recorded",
+    "canonical-repository-identity-recorded",
+    "repository-access-observed",
+    "requested-revision-preserved",
+    "immutable-commit-recorded",
+    "presentation-entrypoint-recorded",
+    "credential-material-not-recorded",
+    "resolved-source-contract-valid",
+    "source-authority-hash-recorded",
+    "final-disposition-recorded"
+  ]
+}
